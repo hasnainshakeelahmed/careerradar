@@ -641,6 +641,8 @@ function ContentModal({ post, onClose }: { post: ContentPost; onClose: () => voi
 export default function WeeklyContent() {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [selectedPost, setSelectedPost] = useState<ContentPost | null>(null);
+  const [email, setEmail] = useState('');
+  const [isSubscribing, setIsSubscribing] = useState(false);
 
   const categories = ['AI Tools', 'Internships', 'Opportunities', 'Skills', 'Resources', 'Trending'];
   
@@ -723,10 +725,37 @@ export default function WeeklyContent() {
                 <input
                   type="email"
                   placeholder="Enter your email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                   className="px-4 py-3 bg-background border border-border/50 rounded-lg focus:border-primary outline-none transition-colors"
                 />
-                <Button className="bg-primary text-primary-foreground hover:bg-primary/90">
-                  Subscribe
+                <Button 
+                  onClick={async () => {
+                    if (!email) return;
+                    setIsSubscribing(true);
+                    try {
+                      const response = await fetch('/api/subscribe', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ email })
+                      });
+                      if (response.ok) {
+                        setEmail('');
+                        alert('Successfully subscribed!');
+                      } else {
+                        alert('Subscription failed. Please try again.');
+                      }
+                    } catch (error) {
+                      console.error('Subscription failed:', error);
+                      alert('Subscription failed. Please try again.');
+                    } finally {
+                      setIsSubscribing(false);
+                    }
+                  }}
+                  disabled={isSubscribing || !email}
+                  className="bg-primary text-primary-foreground hover:bg-primary/90 disabled:opacity-50"
+                >
+                  {isSubscribing ? 'Subscribing...' : 'Subscribe'}
                 </Button>
               </div>
             </div>

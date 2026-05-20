@@ -415,8 +415,14 @@ export default function CareerPaths() {
                   </div>
 
                   <Button
-                    onClick={() => generateCareerPathPDF(path)}
-                    className="mt-6 bg-primary/20 text-primary hover:bg-primary/40 gap-2"
+                    onClick={() => {
+                      try {
+                        generateCareerPathPDF(path);
+                      } catch (error) {
+                        console.error('PDF generation failed:', error);
+                      }
+                    }}
+                    className="mt-6 bg-primary/20 text-primary hover:bg-primary/40 gap-2 transition-all hover:bg-primary/60"
                   >
                     <Download size={16} />
                     Download as PDF
