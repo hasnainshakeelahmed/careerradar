@@ -16,6 +16,7 @@ import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import ProfileDashboard from "./pages/ProfileDashboard";
 
 
 function Router() {
@@ -33,6 +34,7 @@ function Router() {
       <Route path={"/signup"} component={SignUp} />
       <Route path={"/login"} component={Login} />
       <Route path={"/dashboard"} component={Dashboard} />
+      <Route path={"/profile"} component={ProfileDashboard} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
