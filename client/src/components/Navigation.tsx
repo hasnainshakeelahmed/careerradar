@@ -1,32 +1,35 @@
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useLocation } from 'wouter';
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
+  const [location] = useLocation();
 
   const navItems = [
-    { label: 'Home', href: '#home' },
-    { label: 'About', href: '#about' },
-    { label: 'Features', href: '#features' },
-    { label: 'Resources', href: '#resources' },
-    { label: 'Community', href: '#community' },
-    { label: 'Opportunities', href: '#opportunities' },
-    { label: 'Contact', href: '#contact' },
+    { label: 'Home', href: '/' },
+    { label: 'Founder', href: '/founder' },
+    { label: 'Team', href: '/team' },
+    { label: 'Resources', href: '/resources' },
+    { label: 'Community', href: '/community' },
+    { label: 'Opportunities', href: '/opportunities' },
   ];
+
+  const isActive = (href: string) => location === href;
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border">
       <div className="container flex items-center justify-between h-16 md:h-20">
         {/* Logo */}
-        <div className="flex items-center gap-2 group cursor-pointer">
+        <a href="/" className="flex items-center gap-2 group cursor-pointer hover:opacity-80 transition-opacity">
           <div className="w-8 h-8 md:w-10 md:h-10 rounded-full border-2 border-primary flex items-center justify-center group-hover:shadow-lg group-hover:shadow-primary/50 transition-all duration-300">
             <div className="w-4 h-4 md:w-5 md:h-5 rounded-full border border-primary/50 animate-radarSweep"></div>
           </div>
           <span className="text-lg md:text-xl font-bold font-poppins">
             Career<span className="text-primary">Radar</span>
           </span>
-        </div>
+        </a>
 
         {/* Desktop Navigation */}
         <div className="hidden lg:flex items-center gap-8">
@@ -34,7 +37,11 @@ export default function Navigation() {
             <a
               key={item.label}
               href={item.href}
-              className="text-sm font-medium text-foreground/70 hover:text-primary transition-all duration-300 ease-out"
+              className={`text-sm font-medium transition-all duration-300 ease-out ${
+                isActive(item.href)
+                  ? 'text-primary'
+                  : 'text-foreground/70 hover:text-primary'
+              }`}
             >
               {item.label}
             </a>
@@ -43,12 +50,11 @@ export default function Navigation() {
 
         {/* CTA Button - Desktop */}
         <div className="hidden lg:block">
-          <Button
-            className="bg-primary text-primary-foreground hover:bg-primary/90 btn-glow"
-            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-          >
-            Get Started
-          </Button>
+          <a href="/#contact">
+            <Button className="bg-primary text-primary-foreground hover:bg-primary/90 btn-glow">
+              Get Started
+            </Button>
+          </a>
         </div>
 
         {/* Mobile Menu Button */}
@@ -68,21 +74,21 @@ export default function Navigation() {
               <a
                 key={item.label}
                 href={item.href}
-                className="block px-4 py-2 text-foreground/70 hover:text-primary hover:bg-background rounded-lg transition-all duration-300 ease-out"
+                className={`block px-4 py-2 rounded-lg transition-all duration-300 ease-out ${
+                  isActive(item.href)
+                    ? 'text-primary bg-background'
+                    : 'text-foreground/70 hover:text-primary hover:bg-background'
+                }`}
                 onClick={() => setIsOpen(false)}
               >
                 {item.label}
               </a>
             ))}
-            <Button
-              className="w-full bg-primary text-primary-foreground hover:bg-primary/90"
-              onClick={() => {
-                setIsOpen(false);
-                document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
-              }}
-            >
-              Get Started
-            </Button>
+            <a href="/#contact" onClick={() => setIsOpen(false)}>
+              <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90">
+                Get Started
+              </Button>
+            </a>
           </div>
         </div>
       )}
