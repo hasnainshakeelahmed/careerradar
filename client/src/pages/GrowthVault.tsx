@@ -154,16 +154,43 @@ export default function GrowthVault() {
                     <p className="text-accent font-bold">or $8 USD</p>
                   </div>
 
+                  {/* Payment Methods */}
+                  <div className="bg-background/50 border border-primary/20 rounded-lg p-4 space-y-3">
+                    <p className="text-sm font-semibold text-foreground/80">💳 Payment Methods:</p>
+                    
+                    {/* Binance */}
+                    <div className="space-y-2">
+                      <p className="text-xs text-accent font-bold">🪙 Binance (International)</p>
+                      <div className="bg-background rounded px-3 py-2 border border-border/50">
+                        <p className="text-xs font-mono text-foreground/70">ID: 1053511840</p>
+                      </div>
+                    </div>
+
+                    {/* Nayapay/Easypaisa */}
+                    <div className="space-y-2">
+                      <p className="text-xs text-primary font-bold">📱 Nayapay / Easypaisa (Pakistan)</p>
+                      <div className="bg-background rounded px-3 py-2 border border-border/50">
+                        <p className="text-xs font-mono text-foreground/70">03275878584</p>
+                      </div>
+                    </div>
+
+                    <p className="text-xs text-foreground/60 pt-2 border-t border-border/30">
+                      Send payment & screenshot to WhatsApp: +92 370 7519482
+                    </p>
+                  </div>
+
                   <div className="space-y-3">
-                    <Button className="w-full py-4 bg-gradient-to-r from-primary to-accent text-white font-bold text-lg rounded-xl hover:shadow-2xl hover:shadow-primary/50 transition-all duration-300 group">
-                      <span className="flex items-center justify-center gap-2">
-                        <Zap size={20} />
-                        Get Instant Access
-                        <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-                      </span>
-                    </Button>
+                    <a href="https://wa.me/923707519482?text=I%20want%20to%20purchase%20the%20Growth%20Vault%20for%20PKR%202000" target="_blank" rel="noopener noreferrer">
+                      <Button className="w-full py-4 bg-gradient-to-r from-primary to-accent text-white font-bold text-lg rounded-xl hover:shadow-2xl hover:shadow-primary/50 transition-all duration-300 group">
+                        <span className="flex items-center justify-center gap-2">
+                          <Zap size={20} />
+                          Get Instant Access via WhatsApp
+                          <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+                        </span>
+                      </Button>
+                    </a>
                     <p className="text-center text-sm text-foreground/60">
-                      ✓ Money-back guarantee • ✓ No hidden fees
+                      ✓ Money-back guarantee • ✓ No hidden fees • ✓ Instant delivery
                     </p>
                   </div>
                 </div>
