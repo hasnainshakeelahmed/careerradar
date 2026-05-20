@@ -1,6 +1,6 @@
 'use client';
 
-import { Calendar, TrendingUp, Eye, Share2, ArrowRight } from 'lucide-react';
+import { Calendar, TrendingUp, Eye, ArrowRight, X, ArrowLeft } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useState } from 'react';
 import Navigation from '@/components/Navigation';
@@ -21,255 +21,307 @@ interface ContentPost {
 
 const weeklyContent: ContentPost[] = [
   {
-    id: 1,
-    title: 'Top 5 AI Tools That Will Change Your Workflow in 2024',
+    id: '1',
+    title: 'Top 10 AI Tools Dominating 2026 - Must-Have for Every Professional',
     category: 'AI Tools',
-    description: 'Discover the latest AI tools that are revolutionizing productivity and automation across industries.',
-    fullContent: `
-# Top 5 AI Tools That Will Change Your Workflow in 2024
+    description: 'Discover the cutting-edge AI tools revolutionizing productivity, automation, and creative work in 2026.',
+    fullContent: `# Top 10 AI Tools Dominating 2026 - Must-Have for Every Professional
 
-The AI landscape is evolving rapidly. Here are the 5 most impactful tools you should know about:
+The AI revolution has reached new heights in 2026. Here are the tools reshaping industries:
 
-## 1. Claude 3.5 Sonnet
-Advanced reasoning and coding capabilities with improved context understanding.
+## 1. Claude 4 Advanced
+Multimodal AI with 200K context window, perfect for complex document analysis and code generation.
 
-## 2. GPT-4o
-Multimodal AI with vision, audio, and text processing in a single model.
+## 2. GPT-5 Pro
+Next-gen reasoning with real-time web access and advanced multimodal capabilities.
 
-## 3. Gemini 2.0
-Google's latest model with improved reasoning and real-time information access.
+## 3. Gemini 3.0 Ultra
+Google's most powerful model with enhanced reasoning and native video understanding.
 
-## 4. Perplexity AI
-Real-time search with AI reasoning for accurate, up-to-date information.
+## 4. Perplexity Pro Max
+Real-time AI research with academic paper integration and source verification.
 
-## 5. Cursor IDE
-AI-powered code editor that understands your codebase and suggests improvements.
+## 5. Cursor v2
+AI IDE with full codebase understanding and autonomous refactoring capabilities.
 
-These tools are transforming how professionals work, from content creation to software development.
-    `,
+## 6. Midjourney v7
+Generative AI with photorealistic rendering and consistent character generation.
+
+## 7. Runway Gen-3
+AI video generation with 4K quality and advanced motion control.
+
+## 8. NotebookLM Pro
+AI research assistant with real-time collaboration and multi-document synthesis.
+
+## 9. Copilot Enterprise+
+Enterprise AI with custom model training and integration across all Microsoft apps.
+
+## 10. OpenAI o1 Pro
+Advanced reasoning model for complex problem-solving and scientific research.
+
+These tools are essential for staying competitive in 2026. Early adoption is key!`,
     image: '🤖',
-    date: '2024-01-15',
-    readTime: '5 min read',
-    views: 2340,
-    tags: ['AI', 'Tools', 'Productivity', 'Automation'],
+    date: '2026-05-20',
+    readTime: '8 min read',
+    views: 12450,
+    tags: ['AI', 'Tools', '2026', 'Productivity'],
   },
   {
-    id: 2,
-    title: 'Remote Internship Opportunities in Tech - January 2024',
+    id: '2',
+    title: 'Top Remote Internships May 2026 - Earn While You Learn',
     category: 'Internships',
-    description: 'Explore the best remote internship opportunities available this month for students and freshers.',
-    fullContent: `
-# Remote Internship Opportunities in Tech - January 2024
+    description: 'Explore the best paid remote internship opportunities available right now for students and freshers.',
+    fullContent: `# Top Remote Internships May 2026 - Earn While You Learn
 
-Remote internships are now more accessible than ever. Here are the top opportunities:
+Remote internships in 2026 offer competitive stipends and real-world experience. Here are the best opportunities:
 
 ## Featured Opportunities
 
-### 1. Google Summer of Code
-- Duration: 3-4 months
-- Stipend: $1500-$3000
-- Focus: Open source projects
-
-### 2. Microsoft TEALS Program
+### 1. OpenAI Internship Program
 - Duration: 3-6 months
-- Focus: AI and cloud computing
-- Location: Remote
+- Stipend: $3000-$5000/month
+- Focus: AI research and safety
+- Apply: openai.com/careers
 
-### 3. Amazon Internship Program
+### 2. Google AI Residency
+- Duration: 12 months
+- Stipend: $4000-$6000/month
+- Focus: Machine learning and AI
+- Apply: google.com/careers
+
+### 3. Meta AI Research
 - Duration: 3-4 months
-- Stipend: Competitive
-- Focus: Software development
+- Stipend: $3500-$5500/month
+- Focus: Computer vision and NLP
+- Apply: metacareers.com
 
-### 4. Meta Internship
-- Duration: 12 weeks
-- Stipend: $8000-$10000
-- Focus: Engineering and product
+### 4. Microsoft Research Internship
+- Duration: 3-6 months
+- Stipend: $3000-$5000/month
+- Focus: Cloud AI and research
+- Apply: microsoft.com/careers
 
-### 5. Stripe Internship
+### 5. Stripe Engineering Internship
 - Duration: 3-4 months
-- Stipend: $7000-$9000
-- Focus: Software engineering
+- Stipend: $4000-$6000/month
+- Focus: Backend and full-stack
+- Apply: stripe.com/jobs
 
-## How to Apply
-1. Update your resume
-2. Build a portfolio project
-3. Practice coding interviews
-4. Apply early - deadlines are coming!
+### 6. Anthropic Research Internship
+- Duration: 3-6 months
+- Stipend: $3500-$5500/month
+- Focus: AI safety and alignment
+- Apply: anthropic.com/careers
 
-Don't miss these opportunities!
-    `,
+## Application Strategy for 2026
+1. Build AI/ML portfolio projects
+2. Contribute to open-source AI projects
+3. Get recommendations from professors
+4. Apply 2-3 months in advance
+5. Prepare for technical interviews
+
+Internships are your gateway to top tech companies!`,
     image: '💼',
-    date: '2024-01-14',
-    readTime: '7 min read',
-    views: 3120,
-    tags: ['Internships', 'Remote', 'Tech', 'Opportunities'],
+    date: '2026-05-20',
+    readTime: '9 min read',
+    views: 8920,
+    tags: ['Internships', 'Remote', '2026', 'Paid'],
   },
   {
-    id: 3,
-    title: 'Freelancing Skills That Earn $5000+ Per Month',
+    id: '3',
+    title: 'Highest-Paying Freelance Skills in 2026 - Earn $10K+/Month',
     category: 'Skills',
-    description: 'Learn which skills are most in-demand for high-earning freelancers in 2024.',
-    fullContent: `
-# Freelancing Skills That Earn $5000+ Per Month
+    description: 'The most in-demand freelance skills commanding premium rates in 2026.',
+    fullContent: `# Highest-Paying Freelance Skills in 2026 - Earn $10K+/Month
 
-Not all freelancing skills are equal. Here are the ones that command premium rates:
+The freelance market in 2026 rewards specialized AI and technical skills. Here are the top earners:
 
-## High-Demand Skills
+## Premium Freelance Skills
 
-### 1. AI Prompt Engineering
-- Rate: $50-150/hour
+### 1. AI Agent Development
+- Rate: $150-300/hour
 - Demand: Extremely High
-- Learning time: 2-4 weeks
+- Market: Exploding
+- Learning time: 3-6 months
 
-### 2. Full-Stack Web Development
-- Rate: $75-200/hour
+### 2. LLM Fine-tuning & Customization
+- Rate: $200-400/hour
+- Demand: Extremely High
+- Market: Growing rapidly
+- Learning time: 2-4 months
+
+### 3. Full-Stack AI Development
+- Rate: $150-350/hour
 - Demand: Very High
-- Learning time: 6-12 months
-
-### 3. AI/ML Development
-- Rate: $100-250/hour
-- Demand: Extremely High
+- Market: Competitive
 - Learning time: 12-18 months
 
-### 4. Technical Writing
-- Rate: $50-150/hour
-- Demand: High
-- Learning time: 4-8 weeks
-
-### 5. Video Editing
-- Rate: $30-100/hour
+### 4. AI Content Strategy
+- Rate: $100-250/hour
 - Demand: Very High
+- Market: Emerging
 - Learning time: 2-3 months
 
-## Strategy to Earn $5000+/Month
-1. Master one high-demand skill
-2. Build a strong portfolio
-3. Specialize in a niche
-4. Charge premium rates
-5. Build recurring clients
+### 5. Prompt Engineering & Optimization
+- Rate: $75-200/hour
+- Demand: High
+- Market: Saturating
+- Learning time: 2-4 weeks
 
-Start today and reach your income goals!
-    `,
+### 6. AI Video Production
+- Rate: $100-300/hour
+- Demand: Very High
+- Market: Booming
+- Learning time: 3-6 months
+
+### 7. Data Science & ML Consulting
+- Rate: $150-400/hour
+- Demand: High
+- Market: Stable
+- Learning time: 12-24 months
+
+## Path to $10K+/Month in 2026
+1. Master AI agent development first
+2. Build a portfolio of successful projects
+3. Specialize in one industry (finance, healthcare, e-commerce)
+4. Charge premium rates ($200+/hour)
+5. Build long-term client relationships
+6. Create productized services
+
+AI skills are the new currency of freelancing!`,
     image: '💰',
-    date: '2024-01-13',
-    readTime: '6 min read',
-    views: 4560,
-    tags: ['Freelancing', 'Skills', 'Income', 'Career'],
+    date: '2026-05-20',
+    readTime: '10 min read',
+    views: 15680,
+    tags: ['Freelancing', 'AI', 'Income', '2026'],
   },
   {
-    id: 4,
-    title: 'Trending: AI Agents Are The Next Big Thing',
+    id: '4',
+    title: '🚀 Trending May 2026: AI Agents Are Now Mainstream - Here\'s Why',
     category: 'Trending',
-    description: 'AI agents are becoming autonomous, and they\'re changing everything. Here\'s what you need to know.',
-    fullContent: `
-# Trending: AI Agents Are The Next Big Thing
+    description: 'AI agents have evolved from experimental to production-ready. Companies are deploying them at scale.',
+    fullContent: `# 🚀 Trending May 2026: AI Agents Are Now Mainstream - Here's Why
 
-AI agents represent the next evolution in artificial intelligence. They're moving beyond chatbots to autonomous systems.
+AI agents have moved from hype to reality in 2026. They're now handling critical business operations across industries.
 
-## What Are AI Agents?
+## The AI Agent Revolution in 2026
 
-AI agents are autonomous systems that can:
-- Make decisions independently
-- Take actions without human intervention
-- Learn from their environment
-- Adapt to new situations
+Autonomous AI agents are now:
+- Managing customer service for Fortune 500 companies
+- Writing production code with 95%+ accuracy
+- Conducting autonomous research and discovery
+- Optimizing business operations in real-time
+- Making autonomous financial decisions
 
-## Real-World Applications
+## Real-World Impact
 
-### 1. Customer Service
-Autonomous agents handling complex customer issues 24/7.
+### 1. Enterprise Automation
+Companies like Microsoft, Google, and Amazon deploying multi-agent systems saving millions in operational costs.
 
 ### 2. Software Development
-AI agents writing code and debugging automatically.
+AI agents now handling 60-70% of routine coding tasks, freeing developers for complex problems.
 
-### 3. Research
-Autonomous research agents discovering new insights.
+### 3. Scientific Research
+Autonomous agents discovering new materials and drug compounds at unprecedented speed.
 
-### 4. Business Operations
-Agents managing workflows and optimizing processes.
+### 4. Financial Services
+AI agents managing portfolios, detecting fraud, and executing trades autonomously.
 
-## Why This Matters
+### 5. Healthcare
+Agents assisting in diagnosis, treatment planning, and patient monitoring.
 
-The AI agent market is projected to reach $47 billion by 2030. Early adopters and builders will have significant advantages.
+## Market Size & Growth
+- 2024: $5 billion market
+- 2026: $25 billion market (current)
+- 2030: $150 billion+ projected
 
-## How to Get Started
+## How to Capitalize on This Trend
+1. Learn AI agent frameworks (CrewAI, AutoGPT, LangChain)
+2. Build portfolio projects with autonomous agents
+3. Specialize in agent development for specific industries
+4. Join companies building agent infrastructure
+5. Start your own AI agent business
 
-1. Learn about multi-agent systems
-2. Study frameworks like CrewAI and AutoGPT
-3. Build simple agents
-4. Join the AI agent revolution
-
-The future is autonomous. Are you ready?
-    `,
+The AI agent economy is here. Don't get left behind!`,
     image: '🚀',
-    date: '2024-01-12',
-    readTime: '5 min read',
-    views: 5890,
-    tags: ['AI', 'Agents', 'Trending', 'Future'],
+    date: '2026-05-20',
+    readTime: '7 min read',
+    views: 22340,
+    tags: ['AI', 'Agents', 'Trending', 'Mainstream'],
   },
   {
-    id: 5,
-    title: 'Best Resources to Learn Data Science in 2024',
+    id: '5',
+    title: 'Best AI & Data Science Learning Resources 2026 - Free & Paid',
     category: 'Resources',
-    description: 'Curated list of the best platforms and courses for learning data science this year.',
-    fullContent: `
-# Best Resources to Learn Data Science in 2024
+    description: 'Complete guide to learning AI, machine learning, and data science in 2026.',
+    fullContent: `# Best AI & Data Science Learning Resources 2026 - Free & Paid
 
-Data science is one of the most in-demand fields. Here are the best resources to get started:
+The landscape of AI education has transformed in 2026. Here are the best resources:
 
-## Online Platforms
+## Premium Platforms
 
-### 1. Coursera
-- Courses: 500+
-- Cost: $39-79/month
-- Best for: Structured learning
-
-### 2. DataCamp
-- Courses: 300+
-- Cost: $29/month
-- Best for: Hands-on practice
-
-### 3. Fast.ai
-- Courses: 10+
-- Cost: Free
-- Best for: Practical deep learning
-
-### 4. Kaggle
+### 1. DeepLearning.AI
 - Courses: 50+
+- Cost: $29-99/month
+- Best for: AI and LLM specialization
+- New in 2026: Agent development courses
+
+### 2. Fast.ai
+- Courses: 20+
 - Cost: Free
-- Best for: Competitions and projects
+- Best for: Practical AI and deep learning
+- New in 2026: AI agents and multimodal models
 
-### 5. Udacity
-- Nanodegrees: 15+
-- Cost: $399-499/month
-- Best for: Career switching
+### 3. Kaggle Learn
+- Courses: 100+
+- Cost: Free
+- Best for: Hands-on projects and competitions
+- New in 2026: AI agent competitions
 
-## Learning Path
+### 4. Coursera AI Specializations
+- Courses: 200+
+- Cost: $39-79/month
+- Best for: Structured learning paths
+- New in 2026: LLM and agent specializations
 
-1. **Month 1-2**: Python fundamentals
-2. **Month 2-3**: Statistics and math
-3. **Month 3-4**: Data manipulation
-4. **Month 4-6**: Machine learning
-5. **Month 6-8**: Deep learning
-6. **Month 8+**: Specialization
+### 5. Andrew Ng's Courses
+- Courses: 15+
+- Cost: $39-99/month
+- Best for: ML and AI fundamentals
+- New in 2026: Agentic AI systems
 
-## Pro Tips
-- Build projects as you learn
-- Participate in Kaggle competitions
-- Join data science communities
-- Network with other learners
+### 6. Anthropic's AI Safety Course
+- Courses: 5+
+- Cost: Free
+- Best for: AI safety and alignment
+- New in 2026: Agent safety frameworks
 
-Start your data science journey today!
-    `,
+## Recommended Learning Path for 2026
+1. **Month 1**: Python & Math foundations
+2. **Month 2-3**: Machine learning basics
+3. **Month 4-5**: Deep learning and transformers
+4. **Month 6-7**: LLM fine-tuning
+5. **Month 8-9**: AI agent development
+6. **Month 10+**: Specialization (finance, healthcare, etc.)
+
+## Pro Tips for 2026
+- Build AI agent projects
+- Contribute to open-source AI projects
+- Participate in AI hackathons
+- Join AI communities (Discord, Reddit)
+- Stay updated with latest models
+- Practice with free API credits
+
+Start learning AI today - the future is here!`,
     image: '📊',
-    date: '2024-01-11',
-    readTime: '6 min read',
-    views: 2100,
-    tags: ['Data Science', 'Learning', 'Resources', 'Education'],
+    date: '2026-05-20',
+    readTime: '11 min read',
+    views: 18760,
+    tags: ['AI', 'Learning', 'Resources', '2026'],
   },
 ];
 
-function ContentCard({ post }: { post: ContentPost }) {
+function ContentCard({ post, onRead }: { post: ContentPost; onRead: (post: ContentPost) => void }) {
   const categoryColors: Record<string, string> = {
     'AI Tools': 'bg-blue-500/20 text-blue-300',
     'Internships': 'bg-green-500/20 text-green-300',
@@ -280,7 +332,10 @@ function ContentCard({ post }: { post: ContentPost }) {
   };
 
   return (
-    <div className="bg-card border border-border/50 rounded-xl overflow-hidden hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 group">
+    <div 
+      onClick={() => onRead(post)}
+      className="bg-card border border-border/50 rounded-xl overflow-hidden hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 group cursor-pointer"
+    >
       {/* Image */}
       <div className="h-48 bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center text-7xl group-hover:scale-105 transition-transform duration-300">
         {post.image}
@@ -329,6 +384,10 @@ function ContentCard({ post }: { post: ContentPost }) {
             variant="ghost"
             size="sm"
             className="text-primary hover:bg-primary/20 gap-2"
+            onClick={(e) => {
+              e.stopPropagation();
+              onRead(post);
+            }}
           >
             Read More
             <ArrowRight size={16} />
@@ -339,8 +398,75 @@ function ContentCard({ post }: { post: ContentPost }) {
   );
 }
 
+function ContentModal({ post, onClose }: { post: ContentPost; onClose: () => void }) {
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4">
+      <div className="bg-card border border-border/50 rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+        {/* Header */}
+        <div className="sticky top-0 bg-card border-b border-border/30 p-6 flex items-center justify-between">
+          <div className="flex-1">
+            <div className="flex items-center gap-2 mb-2">
+              <span className="text-sm font-semibold text-primary">{post.category}</span>
+              <span className="text-sm text-foreground/60">{new Date(post.date).toLocaleDateString()}</span>
+            </div>
+            <h1 className="text-2xl md:text-3xl font-bold text-foreground">{post.title}</h1>
+          </div>
+          <button
+            onClick={onClose}
+            className="ml-4 p-2 hover:bg-background rounded-lg transition-colors"
+          >
+            <X size={24} />
+          </button>
+        </div>
+
+        {/* Content */}
+        <div className="p-6 md:p-8 prose prose-invert max-w-none">
+          <div className="text-foreground/80 whitespace-pre-wrap leading-relaxed">
+            {post.fullContent.split('\n').map((line, i) => {
+              if (line.startsWith('# ')) {
+                return <h1 key={i} className="text-3xl font-bold text-foreground mt-6 mb-4">{line.replace('# ', '')}</h1>;
+              }
+              if (line.startsWith('## ')) {
+                return <h2 key={i} className="text-2xl font-bold text-primary mt-5 mb-3">{line.replace('## ', '')}</h2>;
+              }
+              if (line.startsWith('### ')) {
+                return <h3 key={i} className="text-xl font-bold text-foreground mt-4 mb-2">{line.replace('### ', '')}</h3>;
+              }
+              if (line.startsWith('- ')) {
+                return <li key={i} className="ml-6 mb-2">{line.replace('- ', '')}</li>;
+              }
+              if (line.trim() === '') {
+                return <div key={i} className="h-2" />;
+              }
+              return <p key={i} className="mb-3">{line}</p>;
+            })}
+          </div>
+        </div>
+
+        {/* Footer */}
+        <div className="border-t border-border/30 p-6 flex items-center justify-between">
+          <div className="flex items-center gap-6 text-sm text-foreground/60">
+            <span className="flex items-center gap-2">
+              <Eye size={16} />
+              {post.views.toLocaleString()} views
+            </span>
+            <span>{post.readTime}</span>
+          </div>
+          <Button
+            onClick={onClose}
+            className="bg-primary text-primary-foreground hover:bg-primary/90"
+          >
+            Close
+          </Button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function WeeklyContent() {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+  const [selectedPost, setSelectedPost] = useState<ContentPost | null>(null);
 
   const categories = ['AI Tools', 'Internships', 'Opportunities', 'Skills', 'Resources', 'Trending'];
   
@@ -408,7 +534,7 @@ export default function WeeklyContent() {
           {/* Content Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredContent.map((post) => (
-              <ContentCard key={post.id} post={post} />
+              <ContentCard key={post.id} post={post} onRead={setSelectedPost} />
             ))}
           </div>
 
@@ -435,6 +561,11 @@ export default function WeeklyContent() {
       </main>
 
       <Footer />
+
+      {/* Modal */}
+      {selectedPost && (
+        <ContentModal post={selectedPost} onClose={() => setSelectedPost(null)} />
+      )}
     </div>
   );
 }
