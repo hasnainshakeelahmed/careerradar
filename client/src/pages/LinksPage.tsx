@@ -54,6 +54,13 @@ export default function LinksPage() {
       color: 'from-blue-600 to-blue-700',
     },
     {
+      title: 'Fiverr Profile',
+      description: 'Hire for freelance services and projects',
+      url: 'https://www.fiverr.com/hasnainshakeell',
+      icon: '💼',
+      color: 'from-green-500 to-emerald-600',
+    },
+    {
       title: 'GitHub',
       description: 'Check out code and projects',
       url: 'https://github.com/hasnainshakeelahmed',
