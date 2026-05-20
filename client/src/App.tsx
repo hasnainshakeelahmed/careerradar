@@ -13,6 +13,7 @@ import ResourcesPage from "./pages/ResourcesPage";
 import OpportunitiesPage from "./pages/OpportunitiesPage";
 import LinksPage from "./pages/LinksPage";
 import PaymentPage from "./pages/PaymentPage";
+import AdminDashboard from "./pages/AdminDashboard";
 
 
 function Router() {
@@ -26,6 +27,7 @@ function Router() {
       <Route path={"/opportunities"} component={OpportunitiesPage} />
       <Route path={"/links"} component={LinksPage} />
       <Route path={"/payment"} component={PaymentPage} />
+      <Route path={"/admin"} component={AdminDashboard} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
