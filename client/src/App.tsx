@@ -11,6 +11,9 @@ import CommunityPage from "./pages/CommunityPage";
 import ResourcesPage from "./pages/ResourcesPage";
 import OpportunitiesPage from "./pages/OpportunitiesPage";
 import LinksPage from "./pages/LinksPage";
+import SignUp from "./pages/SignUp";
+import Login from "./pages/Login";
+import Dashboard from "./pages/Dashboard";
 
 
 function Router() {
@@ -23,6 +26,9 @@ function Router() {
       <Route path={"/resources"} component={ResourcesPage} />
       <Route path={"/opportunities"} component={OpportunitiesPage} />
       <Route path={"/links"} component={LinksPage} />
+      <Route path={"/signup"} component={SignUp} />
+      <Route path={"/login"} component={Login} />
+      <Route path={"/dashboard"} component={Dashboard} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

@@ -49,11 +49,16 @@ export default function Navigation() {
           ))}
         </div>
 
-        {/* CTA Button - Desktop */}
-        <div className="hidden lg:block">
-          <a href="/#contact">
+        {/* Auth Buttons - Desktop */}
+        <div className="hidden lg:flex items-center gap-3">
+          <a href="/login">
+            <Button variant="outline" className="border-border/50 text-foreground hover:bg-card">
+              Log In
+            </Button>
+          </a>
+          <a href="/signup">
             <Button className="bg-primary text-primary-foreground hover:bg-primary/90 btn-glow">
-              Get Started
+              Sign Up
             </Button>
           </a>
         </div>
@@ -85,9 +90,14 @@ export default function Navigation() {
                 {item.label}
               </a>
             ))}
-            <a href="/#contact" onClick={() => setIsOpen(false)}>
+            <a href="/login" onClick={() => setIsOpen(false)} className="block">
+              <Button variant="outline" className="w-full border-border/50 text-foreground hover:bg-card">
+                Log In
+              </Button>
+            </a>
+            <a href="/signup" onClick={() => setIsOpen(false)} className="block">
               <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90">
-                Get Started
+                Sign Up
               </Button>
             </a>
           </div>
