@@ -9,7 +9,7 @@ const team = [
     socials: [
       { icon: Linkedin, href: '#', label: 'LinkedIn' },
       { icon: Twitter, href: '#', label: 'Twitter' },
-      { icon: Mail, href: 'mailto:hasnain@careerradar.pk', label: 'Email' },
+      { icon: Mail, href: 'mailto:hasnainshakeel893@gmail.com', label: 'Email' },
     ],
   },
   {
@@ -20,7 +20,7 @@ const team = [
     socials: [
       { icon: Linkedin, href: '#', label: 'LinkedIn' },
       { icon: Twitter, href: '#', label: 'Twitter' },
-      { icon: Mail, href: 'mailto:shaheer@careerradar.pk', label: 'Email' },
+      { icon: Mail, href: 'mailto:hasnainshakeel893@gmail.com', label: 'Email' },
     ],
   },
 ];

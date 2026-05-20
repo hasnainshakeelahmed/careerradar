@@ -18,8 +18,8 @@ export default function Contact() {
     {
       icon: Mail,
       label: 'Email',
-      value: 'hello@careerradar.pk',
-      href: 'mailto:hello@careerradar.pk',
+      value: 'hasnainshakeel893@gmail.com',
+      href: 'mailto:hasnainshakeel893@gmail.com',
     },
     {
       icon: Phone,

@@ -26,7 +26,7 @@ const channels = [
     icon: Mail,
     color: 'text-primary',
     bgColor: 'bg-primary/10',
-    href: 'mailto:contact@careerradar.ai',
+    href: 'mailto:hasnainshakeel893@gmail.com',
     frequency: 'Weekly',
   },
   {
