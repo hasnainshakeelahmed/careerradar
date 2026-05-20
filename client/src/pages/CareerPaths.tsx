@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import { ChevronDown, ChevronUp, CheckCircle, Clock, Target, Zap, Users, BookOpen } from 'lucide-react';
+import { ChevronDown, ChevronUp, CheckCircle, Clock, Target, Zap, Users, BookOpen, Download } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { generateCareerPathPDF } from '@/lib/pdfGenerator';
 
 interface PathStep {
   id: string;
@@ -413,12 +414,20 @@ export default function CareerPaths() {
               </div>
 
               {/* CTA */}
-              <div className="flex gap-4 mt-8">
+              <div className="flex flex-wrap gap-4 mt-8">
                 <Button className="bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-lg font-semibold">
                   Start {path.name}
                 </Button>
                 <Button variant="outline" className="px-8 py-3 rounded-lg font-semibold">
                   Learn More
+                </Button>
+                <Button
+                  variant="outline"
+                  className="px-8 py-3 rounded-lg font-semibold flex items-center gap-2 hover:bg-primary/10 hover:border-primary/50"
+                  onClick={() => generateCareerPathPDF(path)}
+                >
+                  <Download size={18} />
+                  Download PDF
                 </Button>
               </div>
 
