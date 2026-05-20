@@ -67,6 +67,7 @@ export default function PaymentPage() {
         accountNumber: '03275878584',
       },
       color: 'from-blue-500 to-cyan-500',
+      region: 'Pakistan',
     },
     {
       name: 'Easypaisa',
@@ -76,6 +77,17 @@ export default function PaymentPage() {
         accountNumber: '03275878584',
       },
       color: 'from-green-500 to-emerald-500',
+      region: 'Pakistan',
+    },
+    {
+      name: 'Binance',
+      icon: '🪙',
+      details: {
+        accountTitle: 'Binance ID',
+        accountNumber: '1053511840',
+      },
+      color: 'from-yellow-500 to-orange-500',
+      region: 'India',
     },
   ];
 
@@ -218,9 +230,16 @@ export default function PaymentPage() {
 
                   {/* Content */}
                   <div className="relative z-10 space-y-6">
-                    <div className="flex items-center gap-3">
-                      <span className="text-4xl">{method.icon}</span>
-                      <h3 className="text-2xl font-bold">{method.name}</h3>
+                    <div className="flex items-center justify-between gap-3">
+                      <div className="flex items-center gap-3">
+                        <span className="text-4xl">{method.icon}</span>
+                        <h3 className="text-2xl font-bold">{method.name}</h3>
+                      </div>
+                      {method.region && (
+                        <span className="px-3 py-1 bg-primary/20 text-primary text-xs font-bold rounded-full">
+                          {method.region}
+                        </span>
+                      )}
                     </div>
 
                     <div className="space-y-4 bg-background/50 rounded-lg p-4">
