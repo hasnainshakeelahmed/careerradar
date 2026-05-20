@@ -5,6 +5,7 @@ import Features from '@/components/sections/Features';
 import About from '@/components/sections/About';
 import Testimonials from '@/components/sections/Testimonials';
 import Contact from '@/components/sections/Contact';
+import Outro from '@/components/sections/Outro';
 import Footer from '@/components/Footer';
 
 export default function Home() {
@@ -18,6 +19,7 @@ export default function Home() {
         <About />
         <Testimonials />
         <Contact />
+        <Outro />
       </main>
       <Footer />
     </div>
