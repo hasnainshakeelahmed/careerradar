@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import FloatingWhatsApp from '@/components/FloatingWhatsApp';
+import CheckoutModal from '@/components/CheckoutModal';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -11,6 +12,8 @@ import { User, Bookmark, FileText, Settings, LogOut, Edit2, Save, X } from 'luci
 export default function ProfileDashboard() {
   const [activeTab, setActiveTab] = useState('profile');
   const [isEditing, setIsEditing] = useState(false);
+  const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
+  const [isPremium, setIsPremium] = useState(false);
   
   // Mock user data
   const [profile, setProfile] = useState({
@@ -366,10 +369,23 @@ export default function ProfileDashboard() {
                 <div className="space-y-4">
                   <div className="pb-4 border-b border-border/50">
                     <h3 className="font-semibold mb-2">Subscription Plan</h3>
-                    <p className="text-foreground/70 mb-4">You are currently on the Free plan</p>
-                    <Button className="bg-primary text-primary-foreground hover:bg-primary/90">
-                      Upgrade to Premium ($3/month)
-                    </Button>
+                    <p className="text-foreground/70 mb-4">
+                      You are currently on the <span className={isPremium ? 'text-primary font-semibold' : ''}>{isPremium ? 'Premium' : 'Free'}</span> plan
+                    </p>
+                    {!isPremium && (
+                      <Button 
+                        onClick={() => setIsCheckoutOpen(true)}
+                        className="bg-primary text-primary-foreground hover:bg-primary/90"
+                      >
+                        Upgrade to Premium ($3/month)
+                      </Button>
+                    )}
+                    {isPremium && (
+                      <div className="space-y-2">
+                        <p className="text-sm text-green-400">✓ Premium subscription active</p>
+                        <Button variant="outline" className="w-full">Manage Subscription</Button>
+                      </div>
+                    )}
                   </div>
 
                   <div className="pb-4 border-b border-border/50">
@@ -406,6 +422,15 @@ export default function ProfileDashboard() {
 
       <Footer />
       <FloatingWhatsApp />
+      
+      <CheckoutModal 
+        isOpen={isCheckoutOpen}
+        onClose={() => setIsCheckoutOpen(false)}
+        onSuccess={() => {
+          setIsPremium(true);
+          setActiveTab('settings');
+        }}
+      />
     </div>
   );
 }
