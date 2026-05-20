@@ -49,8 +49,13 @@ export default function Navigation() {
           ))}
         </div>
 
-        {/* CTA Button - Desktop */}
-        <div className="hidden lg:block">
+        {/* Premium & CTA Buttons - Desktop */}
+        <div className="hidden lg:flex items-center gap-4">
+          <a href="/payment">
+            <Button className="bg-accent text-background hover:bg-accent/90 btn-glow">
+              💎 Premium
+            </Button>
+          </a>
           <a href="/#contact">
             <Button className="bg-primary text-primary-foreground hover:bg-primary/90 btn-glow">
               Get Started
@@ -85,11 +90,18 @@ export default function Navigation() {
                 {item.label}
               </a>
             ))}
-            <a href="/#contact" onClick={() => setIsOpen(false)}>
-              <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90">
-                Get Started
-              </Button>
-            </a>
+            <div className="space-y-2 pt-2 border-t border-border/50">
+              <a href="/payment" onClick={() => setIsOpen(false)}>
+                <Button className="w-full bg-accent text-background hover:bg-accent/90">
+                  💎 Premium
+                </Button>
+              </a>
+              <a href="/#contact" onClick={() => setIsOpen(false)}>
+                <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90">
+                  Get Started
+                </Button>
+              </a>
+            </div>
           </div>
         </div>
       )}

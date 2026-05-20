@@ -25,7 +25,8 @@
 - [x] Team member photos and logo uploaded to storage
 
 ## Remaining Tasks
-- [ ] Integrate real Stripe payment processing for $3/month premium tier
+- [x] Add local payment methods (Nayapay/Easypaisa) to premium tier
+- [x] Create payment details/instructions page
 - [ ] Build Admin Dashboard UI for managing database content
 - [ ] Set up email notification system for contact form submissions
 - [ ] Fix TypeScript errors in server/routers.ts (77 errors - type annotations needed)
