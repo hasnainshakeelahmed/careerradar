@@ -14,6 +14,7 @@ export default function Navigation() {
     { label: 'Resources', href: '/resources' },
     { label: 'Community', href: '/community' },
     { label: 'Opportunities', href: '/opportunities' },
+    { label: 'Links', href: '/links' },
   ];
 
   const isActive = (href: string) => location === href;

@@ -10,6 +10,7 @@ import TeamPage from "./pages/TeamPage";
 import CommunityPage from "./pages/CommunityPage";
 import ResourcesPage from "./pages/ResourcesPage";
 import OpportunitiesPage from "./pages/OpportunitiesPage";
+import LinksPage from "./pages/LinksPage";
 
 
 function Router() {
@@ -21,6 +22,7 @@ function Router() {
       <Route path={"/community"} component={CommunityPage} />
       <Route path={"/resources"} component={ResourcesPage} />
       <Route path={"/opportunities"} component={OpportunitiesPage} />
+      <Route path={"/links"} component={LinksPage} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
