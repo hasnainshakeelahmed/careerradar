@@ -1,11 +1,55 @@
-import { useState } from 'react';
-import { Copy, Check, MessageCircle, Zap, TrendingUp } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { Copy, Check, MessageCircle, Zap, TrendingUp, Clock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 
+interface CountdownTime {
+  days: number;
+  hours: number;
+  minutes: number;
+  seconds: number;
+}
+
 export default function PaymentPage() {
   const [copiedField, setCopiedField] = useState<string | null>(null);
+  const [countdown, setCountdown] = useState<CountdownTime>({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
+  });
+
+  // Calculate countdown timer
+  useEffect(() => {
+    const calculateCountdown = () => {
+      // Set offer end time to 7 days from now
+      const endTime = new Date();
+      endTime.setDate(endTime.getDate() + 7);
+      endTime.setHours(23, 59, 59, 999);
+
+      const interval = setInterval(() => {
+        const now = new Date();
+        const difference = endTime.getTime() - now.getTime();
+
+        if (difference > 0) {
+          const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+          const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
+          const minutes = Math.floor((difference / 1000 / 60) % 60);
+          const seconds = Math.floor((difference / 1000) % 60);
+
+          setCountdown({ days, hours, minutes, seconds });
+        } else {
+          setCountdown({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+          clearInterval(interval);
+        }
+      }, 1000);
+
+      return () => clearInterval(interval);
+    };
+
+    return calculateCountdown();
+  }, []);
 
   const copyToClipboard = (text: string, field: string) => {
     navigator.clipboard.writeText(text);
@@ -46,15 +90,31 @@ export default function PaymentPage() {
       <Navigation />
 
       <main className="relative z-10 pt-20 pb-20">
-        {/* Limited Time Offer Banner */}
+        {/* Limited Time Offer Banner with Countdown */}
         <div className="sticky top-20 z-40 bg-gradient-to-r from-amber-500/20 via-red-500/20 to-amber-500/20 border-y border-amber-500/50 backdrop-blur-md">
-          <div className="container py-3 px-4">
-            <div className="flex items-center justify-center gap-2 flex-wrap">
-              <Zap size={20} className="text-amber-400 animate-pulse" />
-              <span className="text-sm md:text-base font-bold text-amber-300">
-                ⏰ LIMITED TIME OFFER: 50% OFF FOR FIRST 100 MEMBERS! Use code: EARLY50
-              </span>
-              <TrendingUp size={20} className="text-amber-400 animate-pulse" />
+          <div className="container py-4 px-4">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+              <div className="flex items-center justify-center md:justify-start gap-2 flex-wrap">
+                <Zap size={20} className="text-amber-400 animate-pulse" />
+                <span className="text-sm md:text-base font-bold text-amber-300">
+                  ⏰ LIMITED TIME OFFER: 50% OFF FOR FIRST 100 MEMBERS!
+                </span>
+                <TrendingUp size={20} className="text-amber-400 animate-pulse" />
+              </div>
+
+              {/* Countdown Timer */}
+              <div className="flex items-center gap-2 bg-red-500/20 border border-red-500/50 rounded-lg px-4 py-2">
+                <Clock size={18} className="text-red-400 animate-pulse" />
+                <div className="flex gap-1 text-sm font-bold text-red-300">
+                  <span className="bg-red-900/40 px-2 py-1 rounded min-w-[2.5rem] text-center">{countdown.days}d</span>
+                  <span>:</span>
+                  <span className="bg-red-900/40 px-2 py-1 rounded min-w-[2.5rem] text-center">{String(countdown.hours).padStart(2, '0')}h</span>
+                  <span>:</span>
+                  <span className="bg-red-900/40 px-2 py-1 rounded min-w-[2.5rem] text-center">{String(countdown.minutes).padStart(2, '0')}m</span>
+                  <span>:</span>
+                  <span className="bg-red-900/40 px-2 py-1 rounded min-w-[2.5rem] text-center">{String(countdown.seconds).padStart(2, '0')}s</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -241,6 +301,7 @@ export default function PaymentPage() {
               <h3 className="text-3xl font-bold">Ready to Upgrade?</h3>
               <p className="text-foreground/70">Join thousands of successful students today</p>
               <p className="text-sm text-amber-400 font-semibold">Limited spots available - only 23 left at this price!</p>
+              <p className="text-xs text-red-400 font-bold">Offer expires in {countdown.days}d {String(countdown.hours).padStart(2, '0')}h {String(countdown.minutes).padStart(2, '0')}m</p>
             </div>
             <a
               href="https://wa.me/923707519482?text=Hi%20Hasnain%2C%20I%20have%20completed%20the%20payment%20for%20Career%20Radar%20Premium.%20Please%20find%20my%20payment%20screenshot%20attached."

@@ -33,6 +33,7 @@
 - [x] Create comprehensive project documentation
 - [x] Add limited time offer banner with urgency messaging
 - [x] Update Contact section (Islamabad location, correct WhatsApp number, remove Discord)
+- [x] Add dynamic countdown timer to payment banner
 
 ## Future Enhancements (Optional)
 - [ ] Set up email notification system for contact form submissions
