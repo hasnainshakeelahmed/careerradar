@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Copy, Check, MessageCircle, Zap, TrendingUp, Clock } from 'lucide-react';
+import { Copy, Check, MessageCircle, Zap, TrendingUp, Clock, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
@@ -13,6 +13,7 @@ interface CountdownTime {
 
 export default function PaymentPage() {
   const [copiedField, setCopiedField] = useState<string | null>(null);
+  const [bannerVisible, setBannerVisible] = useState(true);
   const [countdown, setCountdown] = useState<CountdownTime>({
     days: 0,
     hours: 0,
@@ -90,33 +91,44 @@ export default function PaymentPage() {
       <Navigation />
 
       {/* Limited Time Offer Banner - Sticky at Top */}
-      <div className="fixed top-16 left-0 right-0 z-40 bg-gradient-to-r from-amber-500/20 via-red-500/20 to-amber-500/20 border-b border-amber-500/50 backdrop-blur-md">
-        <div className="container py-3 px-4">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-3">
-            <div className="flex items-center justify-center md:justify-start gap-2 flex-wrap">
-              <Zap size={18} className="text-amber-400 animate-pulse" />
-              <span className="text-xs md:text-sm font-bold text-amber-300">
-                ⏰ LIMITED TIME OFFER: 50% OFF FOR FIRST 100 MEMBERS!
-              </span>
-              <TrendingUp size={18} className="text-amber-400 animate-pulse" />
-            </div>
-
-            {/* Countdown Timer */}
-            <div className="flex items-center gap-1 bg-red-500/20 border border-red-500/50 rounded-lg px-3 py-1.5">
-              <Clock size={16} className="text-red-400 animate-pulse" />
-              <div className="flex gap-0.5 text-xs font-bold text-red-300">
-                <span className="bg-red-900/40 px-1.5 py-0.5 rounded min-w-[2rem] text-center">{countdown.days}d</span>
-                <span>:</span>
-                <span className="bg-red-900/40 px-1.5 py-0.5 rounded min-w-[2rem] text-center">{String(countdown.hours).padStart(2, '0')}h</span>
-                <span>:</span>
-                <span className="bg-red-900/40 px-1.5 py-0.5 rounded min-w-[2rem] text-center">{String(countdown.minutes).padStart(2, '0')}m</span>
-                <span>:</span>
-                <span className="bg-red-900/40 px-1.5 py-0.5 rounded min-w-[2rem] text-center">{String(countdown.seconds).padStart(2, '0')}s</span>
+      {bannerVisible && (
+        <div className="fixed top-16 left-0 right-0 z-40 bg-gradient-to-r from-amber-500/20 via-red-500/20 to-amber-500/20 border-b border-amber-500/50 backdrop-blur-md">
+          <div className="container py-3 px-4">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-3">
+              <div className="flex items-center justify-center md:justify-start gap-2 flex-wrap flex-1">
+                <Zap size={18} className="text-amber-400 animate-pulse" />
+                <span className="text-xs md:text-sm font-bold text-amber-300">
+                  ⏰ LIMITED TIME OFFER: 50% OFF FOR FIRST 100 MEMBERS!
+                </span>
+                <TrendingUp size={18} className="text-amber-400 animate-pulse" />
               </div>
+
+              {/* Countdown Timer */}
+              <div className="flex items-center gap-1 bg-red-500/20 border border-red-500/50 rounded-lg px-3 py-1.5">
+                <Clock size={16} className="text-red-400 animate-pulse" />
+                <div className="flex gap-0.5 text-xs font-bold text-red-300">
+                  <span className="bg-red-900/40 px-1.5 py-0.5 rounded min-w-[2rem] text-center">{countdown.days}d</span>
+                  <span>:</span>
+                  <span className="bg-red-900/40 px-1.5 py-0.5 rounded min-w-[2rem] text-center">{String(countdown.hours).padStart(2, '0')}h</span>
+                  <span>:</span>
+                  <span className="bg-red-900/40 px-1.5 py-0.5 rounded min-w-[2rem] text-center">{String(countdown.minutes).padStart(2, '0')}m</span>
+                  <span>:</span>
+                  <span className="bg-red-900/40 px-1.5 py-0.5 rounded min-w-[2rem] text-center">{String(countdown.seconds).padStart(2, '0')}s</span>
+                </div>
+              </div>
+
+              {/* Close Button */}
+              <button
+                onClick={() => setBannerVisible(false)}
+                className="ml-2 p-1 hover:bg-red-500/20 rounded transition-colors flex-shrink-0"
+                title="Dismiss banner"
+              >
+                <X size={18} className="text-amber-300 hover:text-red-300 transition-colors" />
+              </button>
             </div>
           </div>
         </div>
-      </div>
+      )}
 
       <main className="relative z-10 pt-32 pb-20">
         <div className="container max-w-4xl">
@@ -164,17 +176,14 @@ export default function PaymentPage() {
               </ul>
             </div>
 
-            <div className="bg-card/50 border border-primary/20 rounded-2xl p-8 hover-glow">
-              <div className="space-y-4">
-                <h3 className="text-xl font-bold text-primary">What's Included</h3>
-                <div className="space-y-3 text-sm text-foreground/70">
-                  <p>✨ Unlimited opportunity access</p>
-                  <p>🎯 Personalized recommendations</p>
-                  <p>📊 Performance analytics</p>
-                  <p>🤝 Community networking</p>
-                  <p>📚 Learning resources</p>
-                  <p>🚀 Career acceleration tools</p>
-                </div>
+            <div className="space-y-4">
+              <h2 className="text-2xl font-bold text-accent">What You Get</h2>
+              <div className="space-y-2 text-foreground/70 text-sm">
+                <p>🎯 Personalized recommendations</p>
+                <p>📊 Performance analytics</p>
+                <p>🤝 Community networking</p>
+                <p>📚 Learning resources</p>
+                <p>🚀 Career acceleration tools</p>
               </div>
             </div>
           </div>
@@ -219,20 +228,15 @@ export default function PaymentPage() {
                       <div className="space-y-2">
                         <label className="text-sm text-foreground/60 font-semibold">Account Title</label>
                         <div className="flex items-center justify-between gap-2 bg-background rounded px-3 py-2 border border-border/50">
-                          <span className="text-foreground/80 font-mono text-sm">
-                            {method.details.accountTitle}
-                          </span>
+                          <span className="text-sm font-mono">{method.details.accountTitle}</span>
                           <button
-                            onClick={() =>
-                              copyToClipboard(method.details.accountTitle, `title-${method.name}`)
-                            }
-                            className="text-accent hover:text-accent/80 transition-colors"
-                            title="Copy to clipboard"
+                            onClick={() => copyToClipboard(method.details.accountTitle, `title-${method.name}`)}
+                            className="p-1 hover:bg-primary/20 rounded transition-colors"
                           >
                             {copiedField === `title-${method.name}` ? (
-                              <Check size={18} />
+                              <Check size={16} className="text-green-400" />
                             ) : (
-                              <Copy size={18} />
+                              <Copy size={16} className="text-primary" />
                             )}
                           </button>
                         </div>
@@ -240,22 +244,17 @@ export default function PaymentPage() {
 
                       {/* Account Number */}
                       <div className="space-y-2">
-                        <label className="text-sm text-foreground/60 font-semibold">Account Number</label>
+                        <label className="text-sm text-foreground/60 font-semibold">Account / Phone Number</label>
                         <div className="flex items-center justify-between gap-2 bg-background rounded px-3 py-2 border border-border/50">
-                          <span className="text-foreground/80 font-mono text-sm">
-                            {method.details.accountNumber}
-                          </span>
+                          <span className="text-sm font-mono">{method.details.accountNumber}</span>
                           <button
-                            onClick={() =>
-                              copyToClipboard(method.details.accountNumber, `number-${method.name}`)
-                            }
-                            className="text-accent hover:text-accent/80 transition-colors"
-                            title="Copy to clipboard"
+                            onClick={() => copyToClipboard(method.details.accountNumber, `number-${method.name}`)}
+                            className="p-1 hover:bg-primary/20 rounded transition-colors"
                           >
                             {copiedField === `number-${method.name}` ? (
-                              <Check size={18} />
+                              <Check size={16} className="text-green-400" />
                             ) : (
-                              <Copy size={18} />
+                              <Copy size={16} className="text-primary" />
                             )}
                           </button>
                         </div>
@@ -267,8 +266,8 @@ export default function PaymentPage() {
             </div>
           </div>
 
-          {/* Instructions */}
-          <div className="bg-card/50 border border-accent/20 rounded-2xl p-8 mb-16">
+          {/* Payment Instructions */}
+          <div className="mb-16 bg-card/30 border border-border/50 rounded-2xl p-8">
             <h3 className="text-2xl font-bold mb-6 text-accent">Payment Instructions</h3>
             <ol className="space-y-4 text-foreground/80">
               <li className="flex gap-4">
