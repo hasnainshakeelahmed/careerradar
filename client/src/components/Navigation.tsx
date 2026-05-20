@@ -9,12 +9,12 @@ export default function Navigation() {
 
   const navItems = [
     { label: 'Home', href: '/' },
+    { label: '💎 Growth Vault', href: '/growth-vault', premium: true },
     { label: 'Resources', href: '/resources' },
     { label: 'Community', href: '/community' },
     { label: 'Opportunities', href: '/opportunities' },
     { label: 'Career Paths', href: '/career-paths' },
     { label: '📰 Weekly Updates', href: '/weekly-content' },
-    { label: '💎 Growth Vault', href: '/growth-vault', premium: true },
     { label: 'Founder', href: '/founder' },
     { label: 'Team', href: '/team' },
     { label: 'Links', href: '/links' },
