@@ -1,32 +1,39 @@
 {
   "build_command": "pnpm run build",
-  "capabilities": [],
+  "capabilities": [
+    "db",
+    "server",
+    "user"
+  ],
   "dev_command": "pnpm run dev",
-  "env_vars": {},
+  "env_vars": {
+    "DATABASE_URL": "mysql://2SU4ynQSBxgrCeZ.2687268929f0:w8xMK719Vc1hfqyS3AbJ@gateway02.us-east-1.prod.aws.tidbcloud.com:4000/NQVWoVzAeRCcQyVBHfPNcm?ssl={\"rejectUnauthorized\":true}",
+    "DRIZZLE_DATABASE_URL": "mysql://2SU4ynQSBxgrCeZ.2687268929f0:w8xMK719Vc1hfqyS3AbJ@gateway02.us-east-1.prod.aws.tidbcloud.com:4000/NQVWoVzAeRCcQyVBHfPNcm?ssl={\"rejectUnauthorized\":true}"
+  },
   "experiments": null,
   "git_remote": {
-    "repo_url": "s3://vida-prod-gitrepo/webdev-git/310519663059366809/6GeZtBB5Ar36be3TtqjfFZ",
-    "access_key_id": "ASIAZV3A2ECZNS2JZLTB",
-    "secret_access_key": "k1TaDk3WGnFhYFR+JTbbjxgm3n60nZNWPgEJDvZR",
-    "session_token": "IQoJb3JpZ2luX2VjEB8aCXVzLWVhc3QtMSJHMEUCIBcYdfHCU1Lo0GyCRK8fsd/k/PAT7DpKMketS98v0GskAiEAiCYTcqMBr71d+I0RWFBgv1dY7bNVHNDrwr5xLmWSxcUq/wMI6P//////////ARAEGgw2NjUzODYwOTg4NjYiDK+qHfgOeFYfmVSrESrTA13uAZrgJPOaKJ/6WLdpw8XMIrmAx7l8XgbdWutBVfwXvYrIJhhVsQ1kgLK/IrOLdIVZQ+rCMIorhRgBlkV+PimX8zXpCyWQOzdIRhqR0cmBHoQME1bkUEy+MWRMnPVF12ILP+CJwArhg5sQUSH/2aDnUKrAXcg5b4EFhatwFqdnU0JkJitkHBcX+vjK4lwl9s1zlZqlzxsGLOIt/qC/+TWkYks29WmP26z7VXGhfu6g2zmmav43ZLMKy0gIPAK+jYhiY2YDIaYmbWAW2XnHxgXwAFA0sF3sjVXbipWiG1rsuP+UePUYDE8DBzcchWihZywF/znl4FxagLc2Y6Rc/o/tBthUK8XESMXj4ujsh115nwWbgSJ52jVhqIVb/ZjLcLHeAYH1/hXMDKDHcwKQYGYFOCwvZGpx+dD/cfDNQtXMVoceg+LKNzaCGGKw5Mq74tZUVHvunZwHXY8HpP8ke9G1pXh+OPZ7ygoNB4cD+mSi5IaM1I6Fyrsrka146tdpZMbtzol43BBSnNkaoNdSbMRXNkUxc4meWf+t2espmg3dEoGwnJJUYBonrZeAPHmLxWLBE/rYJl1Vb+M6YobSwoSGePBu/19aOPPk7JZesZGo1U84MLa2tdAGOp0BhSaqDuuyWLoaOnKH8y99N39XRc9kW88FsZqEvegs/kZrFsOk0P3doAA/lflmeTUx1GPOghXr6GZDDOTcgtwUSVJsLoOf27H9aqpwt7tHch+IJ7jX88p40eUwyss8EfYLZ+bYxwf9bUFVRDdmVu1qmilzMtPGbFoGQ0EKho/KAS0VmdoL8tAQSNK12z3tubh5o5gZyGQ+CC+EPpZSmA==",
-    "expiration": "2026-05-20T18:56:54.000Z"
+    "repo_url": "s3://vida-prod-gitrepo/webdev-git/310519663059366809/NQVWoVzAeRCcQyVBHfPNcm",
+    "access_key_id": "ASIAZV3A2ECZBWZNHXTA",
+    "secret_access_key": "JyUAAYyWpfGLJDjKvYiN5pos88rOfEcosT8Ljkqd",
+    "session_token": "IQoJb3JpZ2luX2VjECAaCXVzLWVhc3QtMSJIMEYCIQCO9ZwHmnH8TjOSgWKbpbKZl4FatChxr3S6pU3Yi4AJNAIhAPvnxkfr/g8jFxwUBf6puUQaQI8P+enMkP2ojVdTkmFZKv8DCOj//////////wEQBBoMNjY1Mzg2MDk4ODY2Igxu+glUvOxx0N9fQBsq0wMy98zNtcfUQ5Z8Z0fVA1+B2aokWayRdvjjFbGVaK+yjd8RPosZuya7AeGB4DUMLb0nKW2YoLfEhhQOaLBJZ+X4hd5am2X/VFEgJKlLlpfG/qQA1xPFDesGFZcYxbxvFQ8WeHq3BxakTKNvU+RQMfhextU402c3GLMTsSwHjHTirR2H3hdWOiv1nEdCNeNYNtA5zI/Lv4a+CS7HWsM7hywTPL4QOpNgiKwX6oFXLVri/Onwd1xewHw1ne8xsD85/0NEfHU0B2KjN1dk7IDpMrYqOHq5rHAHtx28Nlx5R7MwnK+/kw9jvO3sKKzcGTwj3mFayU3Jvn3rl21poy+6ywmwR2YrWJS8A55hsL8g/GdGQfRImoz7SJddaGiOzzX1cOkAEJd8Z5Y5W0X3RffC9UNM2eIx72EXrA39D4Y6Wf0opFGiWeE3BHR09UUS7wH06uir2Mzzi4luYLkNioNF3JejlfpsskMPY/xo/JWzsf9mR++kx12CprorGFqV/jXsXlhzJkeqvkLy1zIhxXuGazlNX+/mMtBdN3O9tOp7x79Hirxt4uJK53SrC7Y4Zuqh99UaxJhtI0bCJmuxhWxWUxz2nQ8cbDvzxyxTrqCagfFEiYlWTjD4vrXQBjqcAWHzbXxQME6I87X99uICEULNVnGV8gjQ3t5XgAaMqQcGZVjs8MRWIfm/8es9SGF73a0h/1QBX5NVP9I4LFUgvG38alrH2GPbqGWVLV4rhug3DYfMqPGbkEbF8/heP/KpcmbQIR+1+VElJKjZHJn2rtEkEFpNPeurzjRrq+NDgyBlQPo/1v+BaUWbrBXxQN4shKgIR7l5tQyovAzFKA==",
+    "expiration": "2026-05-20T19:15:04.000Z"
   },
   "name": "career-radar",
   "path": "/home/ubuntu/career-radar",
   "port": 3000,
   "secrets": {
-    "BUILT_IN_FORGE_API_KEY": "R4923eRRpBDLZLXZmy8nf2",
+    "BUILT_IN_FORGE_API_KEY": "VuyZm8bnaDBuLsRKVNbtXK",
     "BUILT_IN_FORGE_API_URL": "https://forge.manus.ai",
-    "JWT_SECRET": "agETGtUHiJSsQhCVUbwjSq",
+    "JWT_SECRET": "5b9aSuAMV5kWoaCvPFGmZi",
     "OAUTH_SERVER_URL": "https://api.manus.im",
     "OWNER_NAME": "Hasnain Shakeel",
-    "OWNER_OPEN_ID": "J7pZRr2aFZxDFULa6uvCMT",
+    "OWNER_OPEN_ID": "S7TECN32xeaNFrW6yBjYcK",
     "VITE_ANALYTICS_ENDPOINT": "https://manus-analytics.com",
-    "VITE_ANALYTICS_WEBSITE_ID": "637d64d6-a857-48e8-a797-cd22c5a253d4",
-    "VITE_APP_ID": "6GeZtBB5Ar36be3TtqjfFZ",
-    "VITE_APP_LOGO": "",
+    "VITE_ANALYTICS_WEBSITE_ID": "3e426ab0-52f6-49de-b623-bdc844a0d825",
+    "VITE_APP_ID": "NQVWoVzAeRCcQyVBHfPNcm",
+    "VITE_APP_LOGO": "https://files.manuscdn.com/user_upload_by_module/web_dev_logo/310519663059366809/DfyhpbtLhHqXNVrz.png",
     "VITE_APP_TITLE": "Career Radar - Your Opportunity Scanner",
-    "VITE_FRONTEND_FORGE_API_KEY": "B446NmSN38a5MLuGqYL6rs",
+    "VITE_FRONTEND_FORGE_API_KEY": "gXEn637eW9ykwq7tNz253H",
     "VITE_FRONTEND_FORGE_API_URL": "https://forge.manus.ai",
     "VITE_OAUTH_PORTAL_URL": "https://manus.im"
   },

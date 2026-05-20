@@ -1,0 +1,13 @@
+{
+  "version": "7",
+  "dialect": "mysql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1779261405979,
+      "tag": "0000_stiff_living_tribunal",
+      "breakpoints": true
+    }
+  ]
+}
