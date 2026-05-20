@@ -35,6 +35,11 @@
 - [x] Update Contact section (Islamabad location, correct WhatsApp number, remove Discord)
 - [x] Add dynamic countdown timer to payment banner
 
+## Current Issues to Fix
+- [x] Fix image URLs in Founder and Team sections (images not displaying)
+- [x] Fix logo display in Navigation
+- [x] Reorder sections: move Resources & Community up, Founder & Team down
+
 ## Future Enhancements (Optional)
 - [ ] Set up email notification system for contact form submissions
 - [ ] Connect Admin Dashboard to real backend data (tRPC procedures)

@@ -9,11 +9,11 @@ export default function Navigation() {
 
   const navItems = [
     { label: 'Home', href: '/' },
-    { label: 'Founder', href: '/founder' },
-    { label: 'Team', href: '/team' },
     { label: 'Resources', href: '/resources' },
     { label: 'Community', href: '/community' },
     { label: 'Opportunities', href: '/opportunities' },
+    { label: 'Founder', href: '/founder' },
+    { label: 'Team', href: '/team' },
     { label: 'Links', href: '/links' },
   ];
 
@@ -24,9 +24,7 @@ export default function Navigation() {
       <div className="container flex items-center justify-between h-16 md:h-20">
         {/* Logo */}
         <a href="/" className="flex items-center gap-2 group cursor-pointer hover:opacity-80 transition-opacity">
-          <div className="w-8 h-8 md:w-10 md:h-10 rounded-full border-2 border-primary flex items-center justify-center group-hover:shadow-lg group-hover:shadow-primary/50 transition-all duration-300">
-            <div className="w-4 h-4 md:w-5 md:h-5 rounded-full border border-primary/50 animate-radarSweep"></div>
-          </div>
+          <img src="/manus-storage/career-radar-logo_70b9fe36.jpeg" alt="Career Radar Logo" className="w-8 h-8 md:w-10 md:h-10 rounded-full" />
           <span className="text-lg md:text-xl font-bold font-poppins">
             Career<span className="text-primary">Radar</span>
           </span>
