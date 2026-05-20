@@ -180,7 +180,7 @@ export default function GrowthVault() {
                   </div>
 
                   <div className="space-y-3">
-                    <a href="https://wa.me/923707519482?text=I%20want%20to%20purchase%20the%20Growth%20Vault%20for%20PKR%202000" target="_blank" rel="noopener noreferrer">
+                    <a href="https://wa.me/923707519482?text=Growth%20Vault" target="_blank" rel="noopener noreferrer">
                       <Button className="w-full py-4 bg-gradient-to-r from-primary to-accent text-white font-bold text-lg rounded-xl hover:shadow-2xl hover:shadow-primary/50 transition-all duration-300 group">
                         <span className="flex items-center justify-center gap-2">
                           <Zap size={20} />
