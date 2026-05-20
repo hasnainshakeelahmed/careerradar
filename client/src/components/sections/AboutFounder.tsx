@@ -43,7 +43,10 @@ export default function AboutFounder() {
                 <h2 className="text-2xl font-bold text-foreground mb-2">Hasnain Shakeel Ahmed</h2>
                 <p className="text-primary font-semibold mb-4">Founder & Visionary</p>
                 <p className="text-sm text-foreground/60 mb-6">AI Creator | Prompt Engineer | Community Builder | Digital Innovator</p>
-                <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90">
+                <Button 
+                  className="w-full bg-primary text-primary-foreground hover:bg-primary/90 cursor-pointer"
+                  onClick={() => window.open('https://wa.me/923707519482', '_blank')}
+                >
                   Connect with Hasnain
                 </Button>
               </div>

@@ -1,7 +1,9 @@
 import { ArrowRight, Zap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useLocation } from 'wouter';
 
 export default function Hero() {
+  const [, navigate] = useLocation();
   return (
     <section id="home" className="relative min-h-screen pt-20 md:pt-32 pb-16 md:pb-24 overflow-hidden">
       {/* Background Pattern */}
@@ -33,7 +35,8 @@ export default function Hero() {
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <Button
                 size="lg"
-                className="bg-primary text-primary-foreground hover:bg-primary/90 btn-glow group"
+                className="bg-primary text-primary-foreground hover:bg-primary/90 btn-glow group cursor-pointer"
+                onClick={() => navigate('/resources')}
               >
                 Start Your Journey
                 <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
@@ -41,7 +44,8 @@ export default function Hero() {
               <Button
                 size="lg"
                 variant="outline"
-                className="border-primary/50 text-foreground hover:bg-primary/10"
+                className="border-primary/50 text-foreground hover:bg-primary/10 cursor-pointer"
+                onClick={() => navigate('/opportunities')}
               >
                 Explore Opportunities
               </Button>

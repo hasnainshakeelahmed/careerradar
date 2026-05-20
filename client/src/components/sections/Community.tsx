@@ -1,5 +1,6 @@
 import { Users, Heart, Zap, TrendingUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useLocation } from 'wouter';
 
 const benefits = [
   {
@@ -29,6 +30,7 @@ const benefits = [
 ];
 
 export default function Community() {
+  const [, navigate] = useLocation();
   return (
     <section id="community" className="py-16 md:py-24 relative overflow-hidden">
       <div className="absolute inset-0 radar-pattern opacity-30"></div>
@@ -64,8 +66,9 @@ export default function Community() {
 
             <div className="pt-4">
               <Button
-                className="bg-primary text-primary-foreground hover:bg-primary/90 btn-glow"
+                className="bg-primary text-primary-foreground hover:bg-primary/90 btn-glow cursor-pointer"
                 size="lg"
+                onClick={() => navigate('/community')}
               >
                 Join the Community Today
               </Button>
