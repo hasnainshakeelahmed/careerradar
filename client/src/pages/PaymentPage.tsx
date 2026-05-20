@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Copy, Check, MessageCircle } from 'lucide-react';
+import { Copy, Check, MessageCircle, Zap, TrendingUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
@@ -45,18 +45,41 @@ export default function PaymentPage() {
 
       <Navigation />
 
-      <main className="relative z-10 pt-32 pb-20">
+      <main className="relative z-10 pt-20 pb-20">
+        {/* Limited Time Offer Banner */}
+        <div className="sticky top-20 z-40 bg-gradient-to-r from-amber-500/20 via-red-500/20 to-amber-500/20 border-y border-amber-500/50 backdrop-blur-md">
+          <div className="container py-3 px-4">
+            <div className="flex items-center justify-center gap-2 flex-wrap">
+              <Zap size={20} className="text-amber-400 animate-pulse" />
+              <span className="text-sm md:text-base font-bold text-amber-300">
+                ⏰ LIMITED TIME OFFER: 50% OFF FOR FIRST 100 MEMBERS! Use code: EARLY50
+              </span>
+              <TrendingUp size={20} className="text-amber-400 animate-pulse" />
+            </div>
+          </div>
+        </div>
+
         <div className="container max-w-4xl">
-          {/* Header */}
-          <div className="text-center mb-16 space-y-4">
+          {/* Header with Urgency */}
+          <div className="text-center mb-16 space-y-4 mt-8">
+            <div className="inline-block bg-red-500/10 border border-red-500/30 rounded-lg px-4 py-2 mb-4">
+              <p className="text-red-400 font-bold text-sm">🔥 Only 23 Spots Left!</p>
+            </div>
             <h1 className="text-5xl md:text-6xl font-bold">
               <span className="text-primary">Upgrade</span> to Premium
             </h1>
             <p className="text-lg text-foreground/70">
               Join 5000+ students and freelancers with exclusive access to premium opportunities
             </p>
-            <div className="inline-block bg-accent/10 border border-accent/30 rounded-lg px-4 py-2 mt-4">
-              <p className="text-accent font-semibold">$3 USD / Month</p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-6">
+              <div className="bg-accent/10 border border-accent/30 rounded-lg px-4 py-2">
+                <p className="text-accent font-semibold">
+                  <span className="line-through text-foreground/50">$6 USD</span> <span className="text-2xl">$3 USD</span> / Month
+                </p>
+              </div>
+              <div className="bg-green-500/10 border border-green-500/30 rounded-lg px-4 py-2">
+                <p className="text-green-400 font-bold">50% OFF - First 100 Only</p>
+              </div>
             </div>
           </div>
 
@@ -93,6 +116,22 @@ export default function PaymentPage() {
                   <p>🚀 Career acceleration tools</p>
                 </div>
               </div>
+            </div>
+          </div>
+
+          {/* Conversion Stats */}
+          <div className="grid grid-cols-3 gap-4 mb-16">
+            <div className="bg-primary/10 border border-primary/20 rounded-lg p-4 text-center">
+              <p className="text-2xl font-bold text-primary">5,234</p>
+              <p className="text-xs text-foreground/60">Active Members</p>
+            </div>
+            <div className="bg-accent/10 border border-accent/20 rounded-lg p-4 text-center">
+              <p className="text-2xl font-bold text-accent">500+</p>
+              <p className="text-xs text-foreground/60">Opportunities</p>
+            </div>
+            <div className="bg-green-500/10 border border-green-500/20 rounded-lg p-4 text-center">
+              <p className="text-2xl font-bold text-green-400">98%</p>
+              <p className="text-xs text-foreground/60">Satisfaction</p>
             </div>
           </div>
 
@@ -193,29 +232,52 @@ export default function PaymentPage() {
             </div>
           </div>
 
-          {/* WhatsApp CTA */}
-          <div className="text-center space-y-6">
+          {/* Primary CTA with Urgency */}
+          <div className="text-center space-y-6 mb-16 bg-gradient-to-b from-primary/5 to-accent/5 border border-primary/20 rounded-2xl p-12">
             <div className="space-y-2">
-              <h3 className="text-2xl font-bold">Ready to Upgrade?</h3>
-              <p className="text-foreground/70">Send your payment screenshot on WhatsApp</p>
+              <div className="inline-block bg-red-500/10 border border-red-500/30 rounded px-3 py-1 mb-2">
+                <p className="text-red-400 text-xs font-bold">⚡ HURRY UP!</p>
+              </div>
+              <h3 className="text-3xl font-bold">Ready to Upgrade?</h3>
+              <p className="text-foreground/70">Join thousands of successful students today</p>
+              <p className="text-sm text-amber-400 font-semibold">Limited spots available - only 23 left at this price!</p>
             </div>
             <a
               href="https://wa.me/923707519482?text=Hi%20Hasnain%2C%20I%20have%20completed%20the%20payment%20for%20Career%20Radar%20Premium.%20Please%20find%20my%20payment%20screenshot%20attached."
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Button className="bg-accent text-background hover:bg-accent/90 btn-glow gap-2 px-8 py-6 text-lg">
+              <Button className="bg-accent text-background hover:bg-accent/90 btn-glow gap-2 px-8 py-6 text-lg font-bold transform hover:scale-105 transition-transform">
                 <MessageCircle size={24} />
-                Send Screenshot on WhatsApp
+                Send Payment Screenshot on WhatsApp
               </Button>
             </a>
             <p className="text-sm text-foreground/60">
-              DM your payment screenshot to complete your subscription
+              ✓ Instant activation after verification
             </p>
           </div>
 
+          {/* Trust Indicators */}
+          <div className="grid md:grid-cols-3 gap-6 mb-16">
+            <div className="text-center space-y-2">
+              <p className="text-2xl">🛡️</p>
+              <h4 className="font-bold">Secure Payment</h4>
+              <p className="text-sm text-foreground/60">Direct transfer to verified account</p>
+            </div>
+            <div className="text-center space-y-2">
+              <p className="text-2xl">⚡</p>
+              <h4 className="font-bold">Instant Access</h4>
+              <p className="text-sm text-foreground/60">Activated within 24 hours</p>
+            </div>
+            <div className="text-center space-y-2">
+              <p className="text-2xl">💯</p>
+              <h4 className="font-bold">Money-Back</h4>
+              <p className="text-sm text-foreground/60">7-day satisfaction guarantee</p>
+            </div>
+          </div>
+
           {/* FAQ Section */}
-          <div className="mt-20 pt-16 border-t border-border/50">
+          <div className="pt-16 border-t border-border/50">
             <h3 className="text-2xl font-bold mb-8 text-center">Frequently Asked Questions</h3>
             <div className="grid md:grid-cols-2 gap-8">
               {[

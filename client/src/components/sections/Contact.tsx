@@ -1,4 +1,4 @@
-import { Mail, MessageSquare, Phone, MapPin } from 'lucide-react';
+import { Mail, Phone, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { useState } from 'react';
@@ -24,19 +24,13 @@ export default function Contact() {
     {
       icon: Phone,
       label: 'WhatsApp',
-      value: '+92 300 1234567',
-      href: 'https://wa.me/923001234567',
+      value: '+92 370 7519482',
+      href: 'https://wa.me/923707519482',
     },
     {
       icon: MapPin,
       label: 'Location',
-      value: 'Karachi, Pakistan',
-      href: '#',
-    },
-    {
-      icon: MessageSquare,
-      label: 'Discord',
-      value: 'Join Our Server',
+      value: 'Islamabad, Pakistan',
       href: '#',
     },
   ];

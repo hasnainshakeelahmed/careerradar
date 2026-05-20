@@ -31,6 +31,8 @@
 - [x] Add background animations to all sub-pages
 - [x] Update Navigation with Premium button
 - [x] Create comprehensive project documentation
+- [x] Add limited time offer banner with urgency messaging
+- [x] Update Contact section (Islamabad location, correct WhatsApp number, remove Discord)
 
 ## Future Enhancements (Optional)
 - [ ] Set up email notification system for contact form submissions
