@@ -13,6 +13,7 @@ export default function Navigation() {
     { label: 'Community', href: '/community' },
     { label: 'Opportunities', href: '/opportunities' },
     { label: 'Career Paths', href: '/career-paths' },
+    { label: '📰 Weekly Updates', href: '/weekly-content' },
     { label: '💎 Growth Vault', href: '/growth-vault', premium: true },
     { label: 'Founder', href: '/founder' },
     { label: 'Team', href: '/team' },

@@ -14,8 +14,9 @@ import OpportunitiesPage from "./pages/OpportunitiesPage";
 import LinksPage from "./pages/LinksPage";
 import PaymentPage from "./pages/PaymentPage";
 import AdminDashboard from "./pages/AdminDashboard";
-import CareerPaths from "./pages/CareerPaths";
-import GrowthVault from "./pages/GrowthVault";
+import CareerPaths from '@/pages/CareerPaths';
+import GrowthVault from '@/pages/GrowthVault';
+import WeeklyContent from '@/pages/WeeklyContent';
 
 
 function Router() {
@@ -31,7 +32,8 @@ function Router() {
       <Route path={"/payment"} component={PaymentPage} />
       <Route path={"/admin"} component={AdminDashboard} />
       <Route path="/career-paths" component={CareerPaths} />
-      <Route path="/growth-vault" component={GrowthVault} />
+        <Route path="/growth-vault" component={GrowthVault} />
+        <Route path="/weekly-content" component={WeeklyContent} />
       <Route path="/404" component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

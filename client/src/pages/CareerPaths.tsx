@@ -1,6 +1,11 @@
-import { useState } from 'react';
-import { ChevronDown, ChevronUp, CheckCircle, Clock, Target, Zap, Users, BookOpen, Download } from 'lucide-react';
+'use client';
+
+import { ChevronDown, ChevronUp, CheckCircle, Clock, Target, Zap, Users, BookOpen, Download, ArrowLeft } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useLocation } from 'wouter';
+import { useState } from 'react';
+import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
 import { generateCareerPathPDF } from '@/lib/pdfGenerator';
 
 interface PathStep {
@@ -48,37 +53,37 @@ const careerPaths: CareerPath[] = [
       {
         id: 'ai-2',
         title: 'Machine Learning Basics',
-        description: 'Learn supervised/unsupervised learning, model evaluation, and feature engineering.',
-        duration: '3-4 months',
-        skills: ['Scikit-learn', 'Model Training', 'Feature Engineering', 'Model Evaluation'],
-        resources: ['Andrew Ng ML Course', 'Fast.ai', 'Kaggle Competitions'],
+        description: 'Learn supervised learning, unsupervised learning, and evaluation metrics.',
+        duration: '2-3 months',
+        skills: ['Scikit-learn', 'Regression', 'Classification', 'Clustering', 'Model Evaluation'],
+        resources: ['Andrew Ng ML Course', 'Kaggle', 'Fast.ai'],
         difficulty: 'intermediate',
       },
       {
         id: 'ai-3',
         title: 'Deep Learning & Neural Networks',
-        description: 'Master neural networks, CNNs, RNNs, and transformers using TensorFlow/PyTorch.',
+        description: 'Master neural networks, CNNs, RNNs, and transformers.',
         duration: '3-4 months',
-        skills: ['TensorFlow', 'PyTorch', 'CNNs', 'RNNs', 'Transformers'],
+        skills: ['TensorFlow', 'PyTorch', 'CNN', 'RNN', 'Transformers'],
         resources: ['Deep Learning Specialization', 'PyTorch Tutorials', 'Papers with Code'],
         difficulty: 'advanced',
       },
       {
         id: 'ai-4',
-        title: 'Advanced Topics & Specialization',
-        description: 'Explore NLP, Computer Vision, Reinforcement Learning, or LLMs based on interest.',
-        duration: '3-4 months',
-        skills: ['NLP', 'Computer Vision', 'RL', 'LLMs', 'Model Deployment'],
-        resources: ['Hugging Face', 'OpenAI API', 'Research Papers', 'GitHub Projects'],
+        title: 'Specialized AI Applications',
+        description: 'Explore NLP, Computer Vision, Reinforcement Learning, or Generative AI.',
+        duration: '2-3 months',
+        skills: ['NLP', 'Computer Vision', 'RL', 'Generative Models', 'LLMs'],
+        resources: ['Hugging Face', 'OpenAI Docs', 'Research Papers'],
         difficulty: 'advanced',
       },
       {
         id: 'ai-5',
-        title: 'Portfolio & Real Projects',
-        description: 'Build 3-5 portfolio projects showcasing your AI skills and deploy them.',
-        duration: '2-3 months',
-        skills: ['Project Management', 'Deployment', 'Documentation', 'GitHub'],
-        resources: ['GitHub', 'Hugging Face Spaces', 'AWS/GCP', 'Portfolio Website'],
+        title: 'Production & Deployment',
+        description: 'Learn to deploy models, MLOps, and production best practices.',
+        duration: '1-2 months',
+        skills: ['Docker', 'Kubernetes', 'MLOps', 'API Development', 'Monitoring'],
+        resources: ['MLOps.community', 'AWS SageMaker', 'Google Cloud AI'],
         difficulty: 'advanced',
       },
     ],
@@ -87,55 +92,55 @@ const careerPaths: CareerPath[] = [
     id: 'freelancing',
     name: 'Freelancing Starter Path',
     icon: '💼',
-    description: 'Start your freelance career and build a sustainable income from day one.',
+    description: 'Start your freelancing journey and build a sustainable income stream.',
     duration: '3-6 months',
-    difficulty: 'Intermediate',
+    difficulty: 'Beginner',
     salaryRange: '$500 - $5000+/month',
     jobMarket: 'Always Growing',
     steps: [
       {
         id: 'free-1',
         title: 'Choose Your Niche',
-        description: 'Identify your skills and select a profitable niche (web dev, writing, design, etc.).',
+        description: 'Identify your skills and select a profitable niche (writing, design, coding, etc).',
         duration: '1-2 weeks',
-        skills: ['Self-Assessment', 'Market Research', 'Niche Selection'],
-        resources: ['Upwork', 'Fiverr', 'Freelancer.com', 'Market Analysis'],
+        skills: ['Self-assessment', 'Market Research', 'Niche Selection'],
+        resources: ['Upwork Trends', 'Fiverr Categories', 'Industry Reports'],
         difficulty: 'beginner',
       },
       {
         id: 'free-2',
         title: 'Build Your Portfolio',
-        description: 'Create 3-5 sample projects or case studies to showcase your expertise.',
+        description: 'Create 3-5 sample projects that showcase your best work.',
         duration: '2-4 weeks',
-        skills: ['Portfolio Building', 'Case Studies', 'Project Showcase'],
-        resources: ['Behance', 'Dribbble', 'GitHub', 'Personal Website'],
+        skills: ['Project Creation', 'Quality Control', 'Documentation'],
+        resources: ['Portfolio Platforms', 'GitHub', 'Behance'],
         difficulty: 'beginner',
       },
       {
         id: 'free-3',
         title: 'Set Up Profiles',
-        description: 'Create professional profiles on Upwork, Fiverr, and other freelance platforms.',
+        description: 'Create professional profiles on Upwork, Fiverr, and other platforms.',
         duration: '1 week',
         skills: ['Profile Optimization', 'Pricing Strategy', 'Branding'],
-        resources: ['Upwork', 'Fiverr', 'LinkedIn', 'Personal Website'],
+        resources: ['Upwork', 'Fiverr', 'Toptal', 'LinkedIn'],
         difficulty: 'beginner',
       },
       {
         id: 'free-4',
         title: 'Land First Clients',
-        description: 'Apply for projects, network, and land your first 5-10 clients.',
-        duration: '2-4 weeks',
-        skills: ['Proposal Writing', 'Networking', 'Negotiation', 'Client Communication'],
-        resources: ['Upwork Tips', 'Cold Outreach Templates', 'LinkedIn Networking'],
+        description: 'Apply for projects, negotiate rates, and deliver excellent work.',
+        duration: '4-8 weeks',
+        skills: ['Proposal Writing', 'Negotiation', 'Client Communication'],
+        resources: ['Bidding Strategies', 'Email Templates', 'Client Management'],
         difficulty: 'intermediate',
       },
       {
         id: 'free-5',
-        title: 'Scale & Grow',
-        description: 'Build reputation, increase rates, and develop recurring clients.',
+        title: 'Scale Your Business',
+        description: 'Build recurring clients, raise rates, and automate processes.',
         duration: 'Ongoing',
-        skills: ['Client Retention', 'Upselling', 'Time Management', 'Business Growth'],
-        resources: ['Freelance Communities', 'Business Courses', 'Networking Events'],
+        skills: ['Business Management', 'Marketing', 'Automation'],
+        resources: ['Business Tools', 'Marketing Strategies', 'Networking'],
         difficulty: 'intermediate',
       },
     ],
@@ -144,7 +149,7 @@ const careerPaths: CareerPath[] = [
     id: 'remote-jobs',
     name: 'Remote Job Path',
     icon: '🌍',
-    description: 'Secure a remote job and enjoy location independence with stable income.',
+    description: 'Prepare for and land high-paying remote positions globally.',
     duration: '6-12 months',
     difficulty: 'Intermediate',
     salaryRange: '$40K - $200K+',
@@ -152,47 +157,47 @@ const careerPaths: CareerPath[] = [
     steps: [
       {
         id: 'remote-1',
-        title: 'Develop In-Demand Skills',
-        description: 'Focus on skills that remote companies actively hire for.',
-        duration: '3-6 months',
-        skills: ['Web Development', 'Data Analysis', 'Cloud Skills', 'Communication'],
-        resources: ['Udemy', 'Coursera', 'freeCodeCamp', 'Codecademy'],
+        title: 'Build Core Skills',
+        description: 'Master the technical skills required for your target role.',
+        duration: '2-4 months',
+        skills: ['Technical Skills', 'Soft Skills', 'Industry Knowledge'],
+        resources: ['Online Courses', 'Certifications', 'Bootcamps'],
         difficulty: 'intermediate',
       },
       {
         id: 'remote-2',
-        title: 'Build Professional Brand',
-        description: 'Create a strong LinkedIn profile, GitHub portfolio, and personal website.',
-        duration: '2-3 weeks',
-        skills: ['LinkedIn Optimization', 'Portfolio Building', 'Personal Branding'],
-        resources: ['LinkedIn', 'GitHub', 'Portfolio Platforms'],
-        difficulty: 'beginner',
+        title: 'Create Strong Portfolio',
+        description: 'Build projects that demonstrate your expertise to remote employers.',
+        duration: '2-3 months',
+        skills: ['Project Development', 'Documentation', 'GitHub'],
+        resources: ['GitHub', 'Portfolio Sites', 'Case Studies'],
+        difficulty: 'intermediate',
       },
       {
         id: 'remote-3',
-        title: 'Target Remote Companies',
-        description: 'Research and apply to companies known for remote-first culture.',
-        duration: '1-2 months',
-        skills: ['Job Research', 'Company Analysis', 'Application Strategy'],
-        resources: ['FlexJobs', 'We Work Remotely', 'Remote.co', 'LinkedIn Jobs'],
+        title: 'Optimize Resume & LinkedIn',
+        description: 'Create a compelling resume and LinkedIn profile for remote roles.',
+        duration: '2-3 weeks',
+        skills: ['Resume Writing', 'LinkedIn Optimization', 'Branding'],
+        resources: ['Resume Templates', 'LinkedIn Guides', 'Career Coaches'],
         difficulty: 'beginner',
       },
       {
         id: 'remote-4',
-        title: 'Interview Preparation',
-        description: 'Prepare for remote-specific interviews and technical assessments.',
-        duration: '2-4 weeks',
-        skills: ['Interview Skills', 'Technical Skills', 'Communication'],
-        resources: ['LeetCode', 'Pramp', 'Interview.dev', 'Mock Interviews'],
+        title: 'Apply to Remote Companies',
+        description: 'Target companies known for remote work and apply strategically.',
+        duration: '2-4 months',
+        skills: ['Job Search', 'Application Strategy', 'Networking'],
+        resources: ['Remote Job Boards', 'Company Lists', 'Networking Events'],
         difficulty: 'intermediate',
       },
       {
         id: 'remote-5',
-        title: 'Negotiate & Succeed',
-        description: 'Negotiate salary, set up your remote workspace, and excel in your role.',
-        duration: 'Ongoing',
-        skills: ['Negotiation', 'Remote Work Best Practices', 'Self-Management'],
-        resources: ['Salary Negotiation Guides', 'Remote Work Communities', 'Productivity Tools'],
+        title: 'Interview & Negotiate',
+        description: 'Ace remote interviews and negotiate competitive offers.',
+        duration: '1-2 months',
+        skills: ['Interview Skills', 'Negotiation', 'Communication'],
+        resources: ['Interview Prep', 'Salary Guides', 'Negotiation Tips'],
         difficulty: 'intermediate',
       },
     ],
@@ -298,7 +303,7 @@ function PathStepCard({ step, isOpen, onToggle }: { step: PathStep; isOpen: bool
             </h5>
             <div className="flex flex-wrap gap-2">
               {step.skills.map((skill) => (
-                <span key={skill} className="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm">
+                <span key={skill} className="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm font-medium">
                   {skill}
                 </span>
               ))}
@@ -307,13 +312,13 @@ function PathStepCard({ step, isOpen, onToggle }: { step: PathStep; isOpen: bool
 
           <div>
             <h5 className="font-semibold text-foreground mb-2 flex items-center gap-2">
-              <BookOpen size={16} className="text-cyan-400" />
+              <BookOpen size={16} className="text-blue-400" />
               Resources
             </h5>
             <ul className="space-y-1">
               {step.resources.map((resource) => (
-                <li key={resource} className="text-foreground/70 text-sm flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 bg-primary rounded-full" />
+                <li key={resource} className="text-sm text-foreground/70 flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 bg-accent rounded-full" />
                   {resource}
                 </li>
               ))}
@@ -326,7 +331,7 @@ function PathStepCard({ step, isOpen, onToggle }: { step: PathStep; isOpen: bool
 }
 
 export default function CareerPaths() {
-  const [expandedPath, setExpandedPath] = useState<string | null>(null);
+  const [, navigate] = useLocation();
   const [expandedSteps, setExpandedSteps] = useState<Set<string>>(new Set());
 
   const toggleStep = (stepId: string) => {
@@ -340,67 +345,85 @@ export default function CareerPaths() {
   };
 
   return (
-    <main className="min-h-screen bg-background">
-      {/* Background animations */}
-      <div className="fixed inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-cyan-500/20 rounded-full mix-blend-screen filter blur-3xl animate-pulse" style={{ animationDelay: '0s' }} />
-        <div className="absolute bottom-20 right-10 w-72 h-72 bg-blue-500/20 rounded-full mix-blend-screen filter blur-3xl animate-pulse" style={{ animationDelay: '1.2s' }} />
-        <div className="absolute top-1/2 left-1/2 w-72 h-72 bg-accent/20 rounded-full mix-blend-screen filter blur-3xl animate-pulse" style={{ animationDelay: '2.4s' }} />
-      </div>
-
-      <div className="relative z-10 container mx-auto px-4 py-16">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-            Career <span className="text-primary">Paths</span>
-          </h1>
-          <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
-            Choose your path and follow a detailed roadmap to achieve your career goals. Each path includes step-by-step guidance, skills to learn, and resources to succeed.
-          </p>
+    <div className="min-h-screen bg-background flex flex-col">
+      <Navigation />
+      
+      <main className="flex-1 relative pt-24">
+        {/* Background animations */}
+        <div className="fixed inset-0 pointer-events-none overflow-hidden">
+          <div className="absolute top-20 left-10 w-72 h-72 bg-cyan-500/20 rounded-full mix-blend-screen filter blur-3xl animate-pulse" style={{ animationDelay: '0s' }} />
+          <div className="absolute bottom-20 right-10 w-72 h-72 bg-blue-500/20 rounded-full mix-blend-screen filter blur-3xl animate-pulse" style={{ animationDelay: '1.2s' }} />
+          <div className="absolute top-1/2 left-1/2 w-72 h-72 bg-accent/20 rounded-full mix-blend-screen filter blur-3xl animate-pulse" style={{ animationDelay: '2.4s' }} />
         </div>
 
-        {/* Paths Grid */}
-        <div className="space-y-12">
-          {careerPaths.map((path) => (
-            <div key={path.id} className="space-y-6">
-              {/* Path Header */}
-              <div className="bg-gradient-to-r from-primary/10 to-accent/10 border border-primary/30 rounded-xl p-8">
-                <div className="flex items-start justify-between mb-4">
-                  <div>
-                    <h2 className="text-3xl font-bold text-foreground mb-2">
-                      <span className="text-4xl mr-3">{path.icon}</span>
-                      {path.name}
-                    </h2>
-                    <p className="text-foreground/70 text-lg">{path.description}</p>
+        <div className="relative z-10 container mx-auto px-4 py-16">
+          {/* Header with Back Button */}
+          <div className="text-center mb-16">
+            <div className="flex items-center justify-center gap-4 mb-6">
+              <button
+                onClick={() => navigate('/')}
+                className="p-2 hover:bg-primary/20 rounded-lg transition-colors"
+                title="Go back to home"
+              >
+                <ArrowLeft size={24} className="text-primary" />
+              </button>
+              <h1 className="text-4xl md:text-5xl font-bold text-foreground">
+                Career <span className="text-primary">Paths</span>
+              </h1>
+            </div>
+            <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
+              Choose your path and follow a detailed roadmap to achieve your career goals. Each path includes step-by-step guidance, skills to learn, and resources to succeed.
+            </p>
+          </div>
+
+          {/* Paths Grid */}
+          <div className="space-y-12">
+            {careerPaths.map((path) => (
+              <div key={path.id} className="space-y-6">
+                {/* Path Header */}
+                <div className="bg-gradient-to-r from-primary/10 to-accent/10 border border-primary/30 rounded-xl p-8">
+                  <div className="flex items-start justify-between mb-4">
+                    <div>
+                      <h2 className="text-3xl font-bold text-foreground mb-2">
+                        <span className="text-4xl mr-3">{path.icon}</span>
+                        {path.name}
+                      </h2>
+                      <p className="text-foreground/70 text-lg">{path.description}</p>
+                    </div>
                   </div>
+
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6">
+                    <div className="bg-background/50 rounded-lg p-4">
+                      <p className="text-xs text-foreground/60 mb-1">Duration</p>
+                      <p className="font-semibold text-foreground flex items-center gap-2">
+                        <Clock size={16} className="text-primary" />
+                        {path.duration}
+                      </p>
+                    </div>
+                    <div className="bg-background/50 rounded-lg p-4">
+                      <p className="text-xs text-foreground/60 mb-1">Difficulty</p>
+                      <p className="font-semibold text-foreground">{path.difficulty}</p>
+                    </div>
+                    <div className="bg-background/50 rounded-lg p-4">
+                      <p className="text-xs text-foreground/60 mb-1">Salary Range</p>
+                      <p className="font-semibold text-primary">{path.salaryRange}</p>
+                    </div>
+                    <div className="bg-background/50 rounded-lg p-4">
+                      <p className="text-xs text-foreground/60 mb-1">Job Market</p>
+                      <p className="font-semibold text-accent">{path.jobMarket}</p>
+                    </div>
+                  </div>
+
+                  <Button
+                    onClick={() => generateCareerPathPDF(path)}
+                    className="mt-6 bg-primary/20 text-primary hover:bg-primary/40 gap-2"
+                  >
+                    <Download size={16} />
+                    Download as PDF
+                  </Button>
                 </div>
 
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6">
-                  <div className="bg-background/50 rounded-lg p-4">
-                    <p className="text-xs text-foreground/60 mb-1">Duration</p>
-                    <p className="font-semibold text-foreground">{path.duration}</p>
-                  </div>
-                  <div className="bg-background/50 rounded-lg p-4">
-                    <p className="text-xs text-foreground/60 mb-1">Difficulty</p>
-                    <p className="font-semibold text-foreground">{path.difficulty}</p>
-                  </div>
-                  <div className="bg-background/50 rounded-lg p-4">
-                    <p className="text-xs text-foreground/60 mb-1">Salary Range</p>
-                    <p className="font-semibold text-foreground text-primary">{path.salaryRange}</p>
-                  </div>
-                  <div className="bg-background/50 rounded-lg p-4">
-                    <p className="text-xs text-foreground/60 mb-1">Job Market</p>
-                    <p className="font-semibold text-foreground text-green-400">{path.jobMarket}</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Path Steps */}
-              <div className="space-y-3">
-                <h3 className="text-xl font-bold text-foreground flex items-center gap-2">
-                  <Target size={24} className="text-primary" />
-                  Roadmap Steps
-                </h3>
+                {/* Steps */}
                 <div className="space-y-3">
                   {path.steps.map((step) => (
                     <PathStepCard
@@ -412,42 +435,12 @@ export default function CareerPaths() {
                   ))}
                 </div>
               </div>
-
-              {/* CTA */}
-              <div className="flex flex-wrap gap-4 mt-8">
-                <Button className="bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-lg font-semibold">
-                  Start {path.name}
-                </Button>
-                <Button variant="outline" className="px-8 py-3 rounded-lg font-semibold">
-                  Learn More
-                </Button>
-                <Button
-                  variant="outline"
-                  className="px-8 py-3 rounded-lg font-semibold flex items-center gap-2 hover:bg-primary/10 hover:border-primary/50"
-                  onClick={() => generateCareerPathPDF(path)}
-                >
-                  <Download size={18} />
-                  Download PDF
-                </Button>
-              </div>
-
-              <div className="border-b border-border/30 mt-12" />
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
+      </main>
 
-        {/* Bottom CTA */}
-        <div className="mt-16 text-center">
-          <h3 className="text-2xl font-bold text-foreground mb-4">Not sure which path is right for you?</h3>
-          <p className="text-foreground/70 mb-6">
-            Join our community to get personalized guidance and connect with mentors in your field.
-          </p>
-          <Button className="bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-lg font-semibold">
-            <Users size={18} className="mr-2" />
-            Join Community
-          </Button>
-        </div>
-      </div>
-    </main>
+      <Footer />
+    </div>
   );
 }
