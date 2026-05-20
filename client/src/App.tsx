@@ -14,18 +14,22 @@ import LinksPage from "./pages/LinksPage";
 import SignUp from "./pages/SignUp";
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
 
 
 function Router() {
   return (
     <Switch>
       <Route path={"/"} component={Home} />
+      <Route path={"/about"} component={About} />
       <Route path={"/founder"} component={Founder} />
       <Route path={"/team"} component={TeamPage} />
       <Route path={"/community"} component={CommunityPage} />
       <Route path={"/resources"} component={ResourcesPage} />
       <Route path={"/opportunities"} component={OpportunitiesPage} />
       <Route path={"/links"} component={LinksPage} />
+      <Route path={"/contact"} component={Contact} />
       <Route path={"/signup"} component={SignUp} />
       <Route path={"/login"} component={Login} />
       <Route path={"/dashboard"} component={Dashboard} />

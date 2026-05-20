@@ -1,19 +1,17 @@
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
-import Hero from '@/components/sections/Hero';
-import Features from '@/components/sections/Features';
-import Testimonials from '@/components/sections/Testimonials';
+import AboutFounder from '@/components/sections/AboutFounder';
+import Team from '@/components/sections/Team';
 import FloatingWhatsApp from '@/components/FloatingWhatsApp';
 
-export default function Home() {
+export default function About() {
   return (
     <div className="min-h-screen bg-background text-foreground flex flex-col">
       <Navigation />
       
-      <main className="flex-1">
-        <Hero />
-        <Features />
-        <Testimonials />
+      <main className="flex-1 pt-20">
+        <AboutFounder />
+        <Team />
       </main>
 
       <Footer />

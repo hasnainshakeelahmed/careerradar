@@ -9,12 +9,11 @@ export default function Navigation() {
 
   const navItems = [
     { label: 'Home', href: '/' },
-    { label: 'Founder', href: '/founder' },
-    { label: 'Team', href: '/team' },
     { label: 'Resources', href: '/resources' },
-    { label: 'Community', href: '/community' },
     { label: 'Opportunities', href: '/opportunities' },
-    { label: 'Links', href: '/links' },
+    { label: 'Community', href: '/community' },
+    { label: 'About', href: '/founder' },
+    { label: 'Contact', href: '/contact' },
   ];
 
   const isActive = (href: string) => location === href;

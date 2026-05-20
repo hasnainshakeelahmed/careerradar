@@ -15,12 +15,6 @@ export default function Hero() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div className="space-y-8 animate-slideInLeft">
-            {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-card border border-primary/30 rounded-full w-fit">
-              <Zap size={16} className="text-primary" />
-              <span className="text-sm font-medium text-foreground/80">Powered by AI & Community</span>
-            </div>
-
             {/* Main Headline */}
             <div className="space-y-4">
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
