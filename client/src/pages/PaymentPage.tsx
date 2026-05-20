@@ -89,36 +89,36 @@ export default function PaymentPage() {
 
       <Navigation />
 
-      <main className="relative z-10 pt-20 pb-20">
-        {/* Limited Time Offer Banner with Countdown */}
-        <div className="sticky top-20 z-40 bg-gradient-to-r from-amber-500/20 via-red-500/20 to-amber-500/20 border-y border-amber-500/50 backdrop-blur-md">
-          <div className="container py-4 px-4">
-            <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-              <div className="flex items-center justify-center md:justify-start gap-2 flex-wrap">
-                <Zap size={20} className="text-amber-400 animate-pulse" />
-                <span className="text-sm md:text-base font-bold text-amber-300">
-                  ⏰ LIMITED TIME OFFER: 50% OFF FOR FIRST 100 MEMBERS!
-                </span>
-                <TrendingUp size={20} className="text-amber-400 animate-pulse" />
-              </div>
+      {/* Limited Time Offer Banner - Sticky at Top */}
+      <div className="fixed top-16 left-0 right-0 z-40 bg-gradient-to-r from-amber-500/20 via-red-500/20 to-amber-500/20 border-b border-amber-500/50 backdrop-blur-md">
+        <div className="container py-3 px-4">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-3">
+            <div className="flex items-center justify-center md:justify-start gap-2 flex-wrap">
+              <Zap size={18} className="text-amber-400 animate-pulse" />
+              <span className="text-xs md:text-sm font-bold text-amber-300">
+                ⏰ LIMITED TIME OFFER: 50% OFF FOR FIRST 100 MEMBERS!
+              </span>
+              <TrendingUp size={18} className="text-amber-400 animate-pulse" />
+            </div>
 
-              {/* Countdown Timer */}
-              <div className="flex items-center gap-2 bg-red-500/20 border border-red-500/50 rounded-lg px-4 py-2">
-                <Clock size={18} className="text-red-400 animate-pulse" />
-                <div className="flex gap-1 text-sm font-bold text-red-300">
-                  <span className="bg-red-900/40 px-2 py-1 rounded min-w-[2.5rem] text-center">{countdown.days}d</span>
-                  <span>:</span>
-                  <span className="bg-red-900/40 px-2 py-1 rounded min-w-[2.5rem] text-center">{String(countdown.hours).padStart(2, '0')}h</span>
-                  <span>:</span>
-                  <span className="bg-red-900/40 px-2 py-1 rounded min-w-[2.5rem] text-center">{String(countdown.minutes).padStart(2, '0')}m</span>
-                  <span>:</span>
-                  <span className="bg-red-900/40 px-2 py-1 rounded min-w-[2.5rem] text-center">{String(countdown.seconds).padStart(2, '0')}s</span>
-                </div>
+            {/* Countdown Timer */}
+            <div className="flex items-center gap-1 bg-red-500/20 border border-red-500/50 rounded-lg px-3 py-1.5">
+              <Clock size={16} className="text-red-400 animate-pulse" />
+              <div className="flex gap-0.5 text-xs font-bold text-red-300">
+                <span className="bg-red-900/40 px-1.5 py-0.5 rounded min-w-[2rem] text-center">{countdown.days}d</span>
+                <span>:</span>
+                <span className="bg-red-900/40 px-1.5 py-0.5 rounded min-w-[2rem] text-center">{String(countdown.hours).padStart(2, '0')}h</span>
+                <span>:</span>
+                <span className="bg-red-900/40 px-1.5 py-0.5 rounded min-w-[2rem] text-center">{String(countdown.minutes).padStart(2, '0')}m</span>
+                <span>:</span>
+                <span className="bg-red-900/40 px-1.5 py-0.5 rounded min-w-[2rem] text-center">{String(countdown.seconds).padStart(2, '0')}s</span>
               </div>
             </div>
           </div>
         </div>
+      </div>
 
+      <main className="relative z-10 pt-32 pb-20">
         <div className="container max-w-4xl">
           {/* Header with Urgency */}
           <div className="text-center mb-16 space-y-4 mt-8">
