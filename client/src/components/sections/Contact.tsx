@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin } from 'lucide-react';
+import { Mail, Phone, MapPin, Instagram, Linkedin, Twitter, Youtube } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { useState } from 'react';
@@ -77,16 +77,42 @@ export default function Contact() {
             <div className="pt-8 border-t border-border/50">
               <p className="text-sm text-foreground/60 mb-4">Follow Us</p>
               <div className="flex gap-3">
-                {['Instagram', 'LinkedIn', 'Twitter', 'YouTube'].map((social) => (
-                  <a
-                    key={social}
-                    href="#"
-                    className="w-10 h-10 bg-card border border-border/50 rounded-lg flex items-center justify-center hover:border-primary/50 hover:bg-primary/10 transition-colors"
-                    title={social}
-                  >
-                    <span className="text-lg">{'📱🔗𝕏▶️'['Instagram,LinkedIn,Twitter,YouTube'.split(',').indexOf(social)]}</span>
-                  </a>
-                ))}
+                <a
+                  href="https://instagram.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 bg-card border border-border/50 rounded-lg flex items-center justify-center hover:border-primary/50 hover:bg-primary/10 transition-colors"
+                  title="Instagram"
+                >
+                  <Instagram size={18} className="text-primary" />
+                </a>
+                <a
+                  href="https://linkedin.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 bg-card border border-border/50 rounded-lg flex items-center justify-center hover:border-primary/50 hover:bg-primary/10 transition-colors"
+                  title="LinkedIn"
+                >
+                  <Linkedin size={18} className="text-primary" />
+                </a>
+                <a
+                  href="https://twitter.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 bg-card border border-border/50 rounded-lg flex items-center justify-center hover:border-primary/50 hover:bg-primary/10 transition-colors"
+                  title="Twitter"
+                >
+                  <Twitter size={18} className="text-primary" />
+                </a>
+                <a
+                  href="https://youtube.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 bg-card border border-border/50 rounded-lg flex items-center justify-center hover:border-primary/50 hover:bg-primary/10 transition-colors"
+                  title="YouTube"
+                >
+                  <Youtube size={18} className="text-primary" />
+                </a>
               </div>
             </div>
           </div>
