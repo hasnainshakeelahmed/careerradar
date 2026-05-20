@@ -1,0 +1,35 @@
+{
+  "build_command": "pnpm run build",
+  "capabilities": [],
+  "dev_command": "pnpm run dev",
+  "env_vars": {},
+  "experiments": null,
+  "git_remote": {
+    "repo_url": "s3://vida-prod-gitrepo/webdev-git/310519663059366809/6GeZtBB5Ar36be3TtqjfFZ",
+    "access_key_id": "ASIAZV3A2ECZNS2JZLTB",
+    "secret_access_key": "k1TaDk3WGnFhYFR+JTbbjxgm3n60nZNWPgEJDvZR",
+    "session_token": "IQoJb3JpZ2luX2VjEB8aCXVzLWVhc3QtMSJHMEUCIBcYdfHCU1Lo0GyCRK8fsd/k/PAT7DpKMketS98v0GskAiEAiCYTcqMBr71d+I0RWFBgv1dY7bNVHNDrwr5xLmWSxcUq/wMI6P//////////ARAEGgw2NjUzODYwOTg4NjYiDK+qHfgOeFYfmVSrESrTA13uAZrgJPOaKJ/6WLdpw8XMIrmAx7l8XgbdWutBVfwXvYrIJhhVsQ1kgLK/IrOLdIVZQ+rCMIorhRgBlkV+PimX8zXpCyWQOzdIRhqR0cmBHoQME1bkUEy+MWRMnPVF12ILP+CJwArhg5sQUSH/2aDnUKrAXcg5b4EFhatwFqdnU0JkJitkHBcX+vjK4lwl9s1zlZqlzxsGLOIt/qC/+TWkYks29WmP26z7VXGhfu6g2zmmav43ZLMKy0gIPAK+jYhiY2YDIaYmbWAW2XnHxgXwAFA0sF3sjVXbipWiG1rsuP+UePUYDE8DBzcchWihZywF/znl4FxagLc2Y6Rc/o/tBthUK8XESMXj4ujsh115nwWbgSJ52jVhqIVb/ZjLcLHeAYH1/hXMDKDHcwKQYGYFOCwvZGpx+dD/cfDNQtXMVoceg+LKNzaCGGKw5Mq74tZUVHvunZwHXY8HpP8ke9G1pXh+OPZ7ygoNB4cD+mSi5IaM1I6Fyrsrka146tdpZMbtzol43BBSnNkaoNdSbMRXNkUxc4meWf+t2espmg3dEoGwnJJUYBonrZeAPHmLxWLBE/rYJl1Vb+M6YobSwoSGePBu/19aOPPk7JZesZGo1U84MLa2tdAGOp0BhSaqDuuyWLoaOnKH8y99N39XRc9kW88FsZqEvegs/kZrFsOk0P3doAA/lflmeTUx1GPOghXr6GZDDOTcgtwUSVJsLoOf27H9aqpwt7tHch+IJ7jX88p40eUwyss8EfYLZ+bYxwf9bUFVRDdmVu1qmilzMtPGbFoGQ0EKho/KAS0VmdoL8tAQSNK12z3tubh5o5gZyGQ+CC+EPpZSmA==",
+    "expiration": "2026-05-20T18:56:54.000Z"
+  },
+  "name": "career-radar",
+  "path": "/home/ubuntu/career-radar",
+  "port": 3000,
+  "secrets": {
+    "BUILT_IN_FORGE_API_KEY": "R4923eRRpBDLZLXZmy8nf2",
+    "BUILT_IN_FORGE_API_URL": "https://forge.manus.ai",
+    "JWT_SECRET": "agETGtUHiJSsQhCVUbwjSq",
+    "OAUTH_SERVER_URL": "https://api.manus.im",
+    "OWNER_NAME": "Hasnain Shakeel",
+    "OWNER_OPEN_ID": "J7pZRr2aFZxDFULa6uvCMT",
+    "VITE_ANALYTICS_ENDPOINT": "https://manus-analytics.com",
+    "VITE_ANALYTICS_WEBSITE_ID": "637d64d6-a857-48e8-a797-cd22c5a253d4",
+    "VITE_APP_ID": "6GeZtBB5Ar36be3TtqjfFZ",
+    "VITE_APP_LOGO": "",
+    "VITE_APP_TITLE": "Career Radar - Your Opportunity Scanner",
+    "VITE_FRONTEND_FORGE_API_KEY": "B446NmSN38a5MLuGqYL6rs",
+    "VITE_FRONTEND_FORGE_API_URL": "https://forge.manus.ai",
+    "VITE_OAUTH_PORTAL_URL": "https://manus.im"
+  },
+  "template_id": "web-static",
+  "test_command": "pnpm test"
+}
