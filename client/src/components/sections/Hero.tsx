@@ -15,12 +15,6 @@ export default function Hero() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div className="space-y-8 animate-slideInLeft">
-            {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-card border border-primary/30 rounded-full w-fit">
-              <Zap size={16} className="text-primary" />
-              <span className="text-sm font-medium text-foreground/80">Powered by AI & Community</span>
-            </div>
-
             {/* Main Headline */}
             <div className="space-y-4">
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
@@ -95,11 +89,6 @@ export default function Hero() {
             </div>
 
             {/* Floating Cards */}
-            <div className="absolute top-0 right-0 bg-card border border-primary/30 rounded-lg p-4 w-48 animate-scaleIn shadow-lg">
-              <div className="text-sm font-medium text-primary mb-2">AI-Powered Insights</div>
-              <p className="text-xs text-foreground/60">Personalized recommendations tailored for you</p>
-            </div>
-
             <div className="absolute bottom-0 left-0 bg-card border border-accent/30 rounded-lg p-4 w-48 animate-scaleIn shadow-lg" style={{ animationDelay: '0.2s' }}>
               <div className="text-sm font-medium text-accent mb-2">Real Opportunities</div>
               <p className="text-xs text-foreground/60">Internships, jobs, and projects waiting for you</p>
