@@ -129,6 +129,65 @@
 }
 
 @layer components {
+  /* Glow hover effects */
+  .hover-glow {
+    @apply transition-all duration-300 ease-out;
+    border-color: rgba(59, 130, 246, 0.3);
+  }
+  
+  .hover-glow:hover {
+    border-color: rgba(59, 130, 246, 0.8);
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.4), inset 0 0 20px rgba(59, 130, 246, 0.1);
+  }
+
+  .hover-glow-accent {
+    @apply transition-all duration-300 ease-out;
+    border-color: rgba(6, 182, 212, 0.3);
+  }
+  
+  .hover-glow-accent:hover {
+    border-color: rgba(6, 182, 212, 0.8);
+    box-shadow: 0 0 20px rgba(6, 182, 212, 0.4), inset 0 0 20px rgba(6, 182, 212, 0.1);
+  }
+
+  /* Card hover glow */
+  .card-hover-glow {
+    @apply transition-all duration-300 ease-out border border-border/50;
+  }
+  
+  .card-hover-glow:hover {
+    border-color: rgba(59, 130, 246, 0.6);
+    box-shadow: 0 0 30px rgba(59, 130, 246, 0.3), inset 0 0 30px rgba(59, 130, 246, 0.05);
+  }
+
+  /* Button hover glow */
+  .btn-hover-glow {
+    @apply transition-all duration-300 ease-out;
+  }
+  
+  .btn-hover-glow:hover {
+    box-shadow: 0 0 25px rgba(59, 130, 246, 0.5), 0 0 50px rgba(6, 182, 212, 0.2);
+  }
+
+  /* Icon hover glow */
+  .icon-hover-glow {
+    @apply transition-all duration-300 ease-out;
+  }
+  
+  .icon-hover-glow:hover {
+    filter: drop-shadow(0 0 12px rgba(59, 130, 246, 0.6));
+  }
+
+  /* Feature block hover glow */
+  .feature-hover-glow {
+    @apply transition-all duration-300 ease-out border border-border/40;
+  }
+  
+  .feature-hover-glow:hover {
+    border-color: rgba(6, 182, 212, 0.7);
+    box-shadow: 0 0 35px rgba(6, 182, 212, 0.25), inset 0 0 35px rgba(6, 182, 212, 0.05);
+  }
+
   .btn-glow {
     @apply shadow-lg shadow-primary/50 hover:shadow-xl hover:shadow-primary/75 transition-all duration-300;
   }
