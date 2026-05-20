@@ -104,7 +104,7 @@ export default function PaymentPage() {
               </div>
 
               {/* Countdown Timer */}
-              <div className="flex items-center gap-1 bg-red-500/20 border border-red-500/50 rounded-lg px-3 py-1.5">
+              <div className="flex items-center gap-1 bg-red-500/20 border border-red-500/50 rounded-lg px-3 py-1.5 animate-countdown-pulse">
                 <Clock size={16} className="text-red-400 animate-pulse" />
                 <div className="flex gap-0.5 text-xs font-bold text-red-300">
                   <span className="bg-red-900/40 px-1.5 py-0.5 rounded min-w-[2rem] text-center">{countdown.days}d</span>
