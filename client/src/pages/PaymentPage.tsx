@@ -146,11 +146,11 @@ export default function PaymentPage() {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-6">
               <div className="bg-accent/10 border border-accent/30 rounded-lg px-4 py-2">
                 <p className="text-accent font-semibold">
-                  <span className="line-through text-foreground/50">$6 USD</span> <span className="text-2xl">$3 USD</span> / Month
+                  <span className="text-2xl">$2 USD</span> / Month (International)
                 </p>
               </div>
               <div className="bg-green-500/10 border border-green-500/30 rounded-lg px-4 py-2">
-                <p className="text-green-400 font-bold">50% OFF - First 100 Only</p>
+                <p className="text-green-400 font-bold">300 PKR / Month (Pakistan)</p>
               </div>
             </div>
           </div>
