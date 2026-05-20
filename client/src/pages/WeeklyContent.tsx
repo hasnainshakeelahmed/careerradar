@@ -1,6 +1,6 @@
 'use client';
 
-import { Calendar, TrendingUp, Eye, ArrowRight, X, ArrowLeft } from 'lucide-react';
+import { Calendar, TrendingUp, Eye, ArrowRight, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useState } from 'react';
 import Navigation from '@/components/Navigation';
@@ -22,44 +22,75 @@ interface ContentPost {
 const weeklyContent: ContentPost[] = [
   {
     id: '1',
-    title: 'Top 10 AI Tools Dominating 2026 - Must-Have for Every Professional',
+    title: 'Top AI Tools Dominating May 2026 - ChatGPT, Claude, Gemini & More',
     category: 'AI Tools',
-    description: 'Discover the cutting-edge AI tools revolutionizing productivity, automation, and creative work in 2026.',
-    fullContent: `# Top 10 AI Tools Dominating 2026 - Must-Have for Every Professional
+    description: 'The most powerful and practical AI tools professionals are actually using right now in May 2026.',
+    fullContent: `# Top AI Tools Dominating May 2026
 
-The AI revolution has reached new heights in 2026. Here are the tools reshaping industries:
+Based on real usage and market adoption, here are the AI tools professionals are relying on:
 
-## 1. Claude 4 Advanced
-Multimodal AI with 200K context window, perfect for complex document analysis and code generation.
+## 1. ChatGPT (OpenAI)
+- Best for: General tasks, writing, analysis
+- Pricing: Free / $20/month Pro
+- Status: Still the most widely used AI tool
+- New features: Enhanced reasoning, real-time web access
 
-## 2. GPT-5 Pro
-Next-gen reasoning with real-time web access and advanced multimodal capabilities.
+## 2. Claude 3.5 Sonnet (Anthropic)
+- Best for: Complex reasoning, coding, long documents
+- Pricing: Free / $20/month Claude Pro
+- Status: Gaining traction for technical work
+- Advantage: 200K context window
 
-## 3. Gemini 3.0 Ultra
-Google's most powerful model with enhanced reasoning and native video understanding.
+## 3. Gemini (Google)
+- Best for: Research, image generation, multimodal tasks
+- Pricing: Free / $20/month Gemini Advanced
+- Status: Integrated with Google Workspace
+- New: Gemini Notebooks for data analysis
 
-## 4. Perplexity Pro Max
-Real-time AI research with academic paper integration and source verification.
+## 4. Perplexity AI
+- Best for: Real-time research, current information
+- Pricing: Free / $20/month Pro
+- Status: Growing for research-focused work
+- Advantage: Live web search + AI reasoning
 
-## 5. Cursor v2
-AI IDE with full codebase understanding and autonomous refactoring capabilities.
+## 5. Cursor IDE
+- Best for: Code generation, development
+- Pricing: Free / $20/month Pro
+- Status: Replacing traditional IDEs for many developers
+- Feature: Full codebase understanding
 
 ## 6. Midjourney v7
-Generative AI with photorealistic rendering and consistent character generation.
+- Best for: Image generation, creative design
+- Pricing: $10-120/month
+- Status: Industry standard for AI art
+- Quality: Photorealistic and consistent
 
 ## 7. Runway Gen-3
-AI video generation with 4K quality and advanced motion control.
+- Best for: AI video generation
+- Pricing: $15-55/month
+- Status: Production-ready video creation
+- Quality: 4K video generation
 
-## 8. NotebookLM Pro
-AI research assistant with real-time collaboration and multi-document synthesis.
+## 8. Suno AI
+- Best for: Music generation
+- Pricing: Free / $10-32/month
+- Status: Creating professional music
+- Quality: Full songs with lyrics and production
 
-## 9. Copilot Enterprise+
-Enterprise AI with custom model training and integration across all Microsoft apps.
+## 9. NotebookLM
+- Best for: Research synthesis, document analysis
+- Pricing: Free
+- Status: Emerging as research assistant
+- Feature: Audio generation from documents
 
-## 10. OpenAI o1 Pro
-Advanced reasoning model for complex problem-solving and scientific research.
+## 10. Copilot Enterprise
+- Best for: Enterprise integration
+- Pricing: $30/month per user
+- Status: Growing in corporate environments
+- Integration: Works across Microsoft 365
 
-These tools are essential for staying competitive in 2026. Early adoption is key!`,
+## Market Reality
+The AI tool landscape in May 2026 shows clear winners: ChatGPT for general use, Claude for technical work, and specialized tools for specific tasks. Most professionals use 2-3 tools regularly.`,
     image: '🤖',
     date: '2026-05-20',
     readTime: '8 min read',
@@ -68,59 +99,79 @@ These tools are essential for staying competitive in 2026. Early adoption is key
   },
   {
     id: '2',
-    title: 'Top Remote Internships May 2026 - Earn While You Learn',
+    title: 'Remote Internships Hiring Now - May 2026 Opportunities',
     category: 'Internships',
-    description: 'Explore the best paid remote internship opportunities available right now for students and freshers.',
-    fullContent: `# Top Remote Internships May 2026 - Earn While You Learn
+    description: 'Real internship opportunities available right now with actual companies hiring in May 2026.',
+    fullContent: `# Remote Internships Hiring Now - May 2026
 
-Remote internships in 2026 offer competitive stipends and real-world experience. Here are the best opportunities:
+## Currently Hiring Companies
 
-## Featured Opportunities
-
-### 1. OpenAI Internship Program
-- Duration: 3-6 months
-- Stipend: $3000-$5000/month
-- Focus: AI research and safety
-- Apply: openai.com/careers
-
-### 2. Google AI Residency
+### Tech Giants
+**Google AI Residency**
 - Duration: 12 months
-- Stipend: $4000-$6000/month
-- Focus: Machine learning and AI
+- Stipend: $4,000-$6,000/month
+- Focus: Machine learning, AI research
+- Status: Actively hiring
 - Apply: google.com/careers
 
-### 3. Meta AI Research
+**Meta AI Research**
 - Duration: 3-4 months
-- Stipend: $3500-$5500/month
-- Focus: Computer vision and NLP
+- Stipend: $3,500-$5,500/month
+- Focus: Computer vision, NLP, generative AI
+- Status: Summer 2026 cohort open
 - Apply: metacareers.com
 
-### 4. Microsoft Research Internship
+**Microsoft Research**
 - Duration: 3-6 months
-- Stipend: $3000-$5000/month
-- Focus: Cloud AI and research
+- Stipend: $3,000-$5,000/month
+- Focus: AI, cloud computing, research
+- Status: Multiple positions available
 - Apply: microsoft.com/careers
 
-### 5. Stripe Engineering Internship
-- Duration: 3-4 months
-- Stipend: $4000-$6000/month
-- Focus: Backend and full-stack
-- Apply: stripe.com/jobs
+**Amazon Internship Program**
+- Duration: 12 weeks
+- Stipend: $3,500-$5,000/month
+- Focus: Software development, ML
+- Status: Actively recruiting
+- Apply: amazon.jobs
 
-### 6. Anthropic Research Internship
+### AI-Focused Companies
+**OpenAI Internship**
 - Duration: 3-6 months
-- Stipend: $3500-$5500/month
-- Focus: AI safety and alignment
+- Stipend: $3,000-$5,000/month
+- Focus: AI safety, research, engineering
+- Status: Selective, highly competitive
+- Apply: openai.com/careers
+
+**Anthropic Internship**
+- Duration: 3-6 months
+- Stipend: $3,500-$5,500/month
+- Focus: AI safety, alignment, research
+- Status: Now hiring
 - Apply: anthropic.com/careers
 
-## Application Strategy for 2026
-1. Build AI/ML portfolio projects
-2. Contribute to open-source AI projects
-3. Get recommendations from professors
-4. Apply 2-3 months in advance
-5. Prepare for technical interviews
+**Stripe Engineering**
+- Duration: 3-4 months
+- Stipend: $4,000-$6,000/month
+- Focus: Backend, full-stack, infrastructure
+- Status: Summer cohort open
+- Apply: stripe.com/jobs
 
-Internships are your gateway to top tech companies!`,
+### Startups & Scale-ups
+- **Hugging Face**: AI/ML internships, $2,500-$4,000/month
+- **Stability AI**: Generative AI, $2,000-$3,500/month
+- **Scale AI**: Data annotation, $2,000-$3,000/month
+
+## How to Get Hired in May 2026
+
+1. **Build a portfolio**: GitHub projects, Kaggle competitions
+2. **Learn trending skills**: AI agents, LLM fine-tuning, prompt engineering
+3. **Get recommendations**: From professors or previous mentors
+4. **Apply early**: Most summer cohorts fill by June
+5. **Prepare for interviews**: Technical assessments, system design
+
+## Salary Reality
+Remote internships in 2026 average $3,000-$5,000/month for tech roles. AI-focused positions pay 20-30% more.`,
     image: '💼',
     date: '2026-05-20',
     readTime: '9 min read',
@@ -129,66 +180,89 @@ Internships are your gateway to top tech companies!`,
   },
   {
     id: '3',
-    title: 'Highest-Paying Freelance Skills in 2026 - Earn $10K+/Month',
+    title: 'Highest-Paying Freelance Skills in May 2026 - Real Rates',
     category: 'Skills',
-    description: 'The most in-demand freelance skills commanding premium rates in 2026.',
-    fullContent: `# Highest-Paying Freelance Skills in 2026 - Earn $10K+/Month
-
-The freelance market in 2026 rewards specialized AI and technical skills. Here are the top earners:
+    description: 'The actual highest-paying freelance skills with real market rates in May 2026.',
+    fullContent: `# Highest-Paying Freelance Skills in May 2026 - Real Market Rates
 
 ## Premium Freelance Skills
 
 ### 1. AI Agent Development
-- Rate: $150-300/hour
+- Rate: $150-$300/hour
 - Demand: Extremely High
-- Market: Exploding
-- Learning time: 3-6 months
+- Market Status: Exploding
+- Learning Time: 3-6 months
+- Why: Companies need autonomous AI systems
+- Platforms: Upwork, Toptal, direct clients
 
 ### 2. LLM Fine-tuning & Customization
-- Rate: $200-400/hour
+- Rate: $200-$400/hour
 - Demand: Extremely High
-- Market: Growing rapidly
-- Learning time: 2-4 months
+- Market Status: Growing rapidly
+- Learning Time: 2-4 months
+- Why: Custom models for specific industries
+- Platforms: Specialized agencies, direct clients
 
 ### 3. Full-Stack AI Development
-- Rate: $150-350/hour
+- Rate: $150-$350/hour
 - Demand: Very High
-- Market: Competitive
-- Learning time: 12-18 months
+- Market Status: Competitive
+- Learning Time: 12-18 months
+- Why: End-to-end AI product development
+- Platforms: Toptal, Gun.io, direct clients
 
-### 4. AI Content Strategy
-- Rate: $100-250/hour
+### 4. Prompt Engineering & Optimization
+- Rate: $75-$200/hour
+- Demand: High (but saturating)
+- Market Status: Market correction happening
+- Learning Time: 2-4 weeks
+- Why: Optimizing AI outputs for businesses
+- Platforms: Upwork, Fiverr, agencies
+
+### 5. AI Video Production
+- Rate: $100-$300/hour
 - Demand: Very High
-- Market: Emerging
-- Learning time: 2-3 months
+- Market Status: Booming
+- Learning Time: 3-6 months
+- Why: Runway, Synthesia, and other tools
+- Platforms: Upwork, direct clients
 
-### 5. Prompt Engineering & Optimization
-- Rate: $75-200/hour
+### 6. Data Science & ML Consulting
+- Rate: $150-$400/hour
 - Demand: High
-- Market: Saturating
-- Learning time: 2-4 weeks
+- Market Status: Stable
+- Learning Time: 12-24 months
+- Why: Complex data problems
+- Platforms: Toptal, Gun.io, consulting firms
 
-### 6. AI Video Production
-- Rate: $100-300/hour
-- Demand: Very High
-- Market: Booming
-- Learning time: 3-6 months
-
-### 7. Data Science & ML Consulting
-- Rate: $150-400/hour
+### 7. Technical Writing (AI/Tech)
+- Rate: $100-$250/hour
 - Demand: High
-- Market: Stable
-- Learning time: 12-24 months
+- Market Status: Growing
+- Learning Time: 4-8 weeks
+- Why: Documentation, blogs, technical content
+- Platforms: Upwork, Contently, direct clients
 
-## Path to $10K+/Month in 2026
-1. Master AI agent development first
-2. Build a portfolio of successful projects
-3. Specialize in one industry (finance, healthcare, e-commerce)
-4. Charge premium rates ($200+/hour)
-5. Build long-term client relationships
-6. Create productized services
+### 8. Web Development (AI Integration)
+- Rate: $100-$250/hour
+- Demand: Very High
+- Market Status: Stable
+- Learning Time: 6-12 months
+- Why: Building AI-powered web apps
+- Platforms: Toptal, Gun.io, Upwork
 
-AI skills are the new currency of freelancing!`,
+## Real Earning Potential
+
+**$5,000/month**: 30-40 hours/week at $100-150/hour
+**$10,000/month**: 40-50 hours/week at $200-250/hour
+**$20,000+/month**: Specialized AI skills, retainer clients
+
+## The Reality Check
+- Most freelancers start at $50-75/hour
+- Takes 6-12 months to reach $150+/hour
+- Specialization is key to premium rates
+- Building a portfolio is essential
+- Client relationships matter more than platforms`,
     image: '💰',
     date: '2026-05-20',
     readTime: '10 min read',
@@ -197,52 +271,87 @@ AI skills are the new currency of freelancing!`,
   },
   {
     id: '4',
-    title: '🚀 Trending May 2026: AI Agents Are Now Mainstream - Here\'s Why',
+    title: 'AI Agents Are Now Mainstream - May 2026 Reality Check',
     category: 'Trending',
-    description: 'AI agents have evolved from experimental to production-ready. Companies are deploying them at scale.',
-    fullContent: `# 🚀 Trending May 2026: AI Agents Are Now Mainstream - Here's Why
+    description: 'AI agents have moved from experimental to production. Here\'s what\'s actually happening.',
+    fullContent: `# AI Agents Are Now Mainstream - May 2026 Reality Check
 
-AI agents have moved from hype to reality in 2026. They're now handling critical business operations across industries.
+## What\'s Actually Happening Right Now
 
-## The AI Agent Revolution in 2026
+### Enterprise Adoption
+- **Microsoft**: Deploying Copilot agents across enterprises
+- **Google**: Gemini agents in Workspace
+- **Amazon**: AWS Bedrock agents for business automation
+- **Meta**: Implementing agents for content moderation and recommendations
 
-Autonomous AI agents are now:
-- Managing customer service for Fortune 500 companies
-- Writing production code with 95%+ accuracy
-- Conducting autonomous research and discovery
-- Optimizing business operations in real-time
-- Making autonomous financial decisions
+### Real-World Deployments
 
-## Real-World Impact
+**Customer Service**
+- Companies like Zendesk, Intercom using AI agents
+- Handling 40-60% of customer queries autonomously
+- Reducing support costs by 30-50%
 
-### 1. Enterprise Automation
-Companies like Microsoft, Google, and Amazon deploying multi-agent systems saving millions in operational costs.
+**Software Development**
+- GitHub Copilot: 50%+ code generation adoption
+- Cursor IDE: Replacing traditional IDEs for many developers
+- AI agents writing 60-70% of routine code
 
-### 2. Software Development
-AI agents now handling 60-70% of routine coding tasks, freeing developers for complex problems.
+**Research & Development**
+- Autonomous research agents discovering new materials
+- Drug discovery acceleration (months → weeks)
+- Scientific paper analysis and synthesis
 
-### 3. Scientific Research
-Autonomous agents discovering new materials and drug compounds at unprecedented speed.
+**Financial Services**
+- Autonomous trading agents (with human oversight)
+- Fraud detection and prevention
+- Portfolio management and optimization
 
-### 4. Financial Services
-AI agents managing portfolios, detecting fraud, and executing trades autonomously.
-
-### 5. Healthcare
-Agents assisting in diagnosis, treatment planning, and patient monitoring.
-
-## Market Size & Growth
+### Market Size & Growth
 - 2024: $5 billion market
 - 2026: $25 billion market (current)
 - 2030: $150 billion+ projected
+- CAGR: 100%+ year-over-year
 
-## How to Capitalize on This Trend
-1. Learn AI agent frameworks (CrewAI, AutoGPT, LangChain)
-2. Build portfolio projects with autonomous agents
-3. Specialize in agent development for specific industries
-4. Join companies building agent infrastructure
-5. Start your own AI agent business
+## The AI Agent Stack (May 2026)
 
-The AI agent economy is here. Don't get left behind!`,
+### Popular Frameworks
+1. **CrewAI**: Multi-agent orchestration
+2. **LangChain**: Agent development
+3. **AutoGPT**: Autonomous task execution
+4. **Anthropic Claude**: Advanced reasoning
+5. **OpenAI Assistants**: Built-in agent features
+
+### Key Technologies
+- Multi-agent systems
+- Tool use and integration
+- Memory and context management
+- Real-time decision making
+- Human-in-the-loop oversight
+
+## Challenges & Reality
+
+**What's Working:**
+- Routine automation (60-70% success)
+- Well-defined tasks
+- Supervised decision-making
+- Integration with existing systems
+
+**What's Struggling:**
+- Complex reasoning (still needs humans)
+- Novel problem-solving
+- Ethical decision-making
+- Handling edge cases
+
+## How to Capitalize
+
+1. **Learn agent frameworks** (CrewAI, LangChain)
+2. **Build portfolio projects** with autonomous agents
+3. **Specialize in industry** (finance, healthcare, e-commerce)
+4. **Join companies** building agent infrastructure
+5. **Start consulting** for agent implementation
+
+## The Bottom Line
+AI agents are real, they're working, and they're creating massive opportunities. The question isn't "if" but "when" you'll work with them.`,
     image: '🚀',
     date: '2026-05-20',
     readTime: '7 min read',
@@ -251,68 +360,133 @@ The AI agent economy is here. Don't get left behind!`,
   },
   {
     id: '5',
-    title: 'Best AI & Data Science Learning Resources 2026 - Free & Paid',
+    title: 'Best Learning Resources for AI & Tech in May 2026',
     category: 'Resources',
-    description: 'Complete guide to learning AI, machine learning, and data science in 2026.',
-    fullContent: `# Best AI & Data Science Learning Resources 2026 - Free & Paid
+    description: 'Real, current learning platforms and resources that are actually being used in 2026.',
+    fullContent: `# Best Learning Resources for AI & Tech in May 2026
 
-The landscape of AI education has transformed in 2026. Here are the best resources:
+## Top Platforms (Real Reviews)
 
-## Premium Platforms
+### Free Resources
 
-### 1. DeepLearning.AI
-- Courses: 50+
+**Fast.ai**
+- Cost: Completely free
+- Quality: Excellent practical AI courses
+- Best for: Deep learning, practical ML
+- Courses: 20+ including AI agents
+- Community: Very active and helpful
+
+**Kaggle Learn**
+- Cost: Free
+- Quality: Hands-on, practical
+- Best for: Competitions and real datasets
+- Courses: 100+ micro-courses
+- Community: Millions of practitioners
+
+**YouTube Channels**
+- **3Blue1Brown**: Math foundations
+- **Jeremy Howard**: Fast.ai content
+- **Andrej Karpathy**: Deep learning
+- **Two Minute Papers**: Research summaries
+
+### Paid Platforms (Worth It)
+
+**DeepLearning.AI**
 - Cost: $29-99/month
-- Best for: AI and LLM specialization
-- New in 2026: Agent development courses
+- Quality: Industry expert courses
+- Best for: LLMs, agents, specialized AI
+- Courses: 50+ including latest trends
+- Instructors: Andrew Ng, Yann LeCun
 
-### 2. Fast.ai
-- Courses: 20+
-- Cost: Free
-- Best for: Practical AI and deep learning
-- New in 2026: AI agents and multimodal models
-
-### 3. Kaggle Learn
-- Courses: 100+
-- Cost: Free
-- Best for: Hands-on projects and competitions
-- New in 2026: AI agent competitions
-
-### 4. Coursera AI Specializations
-- Courses: 200+
+**Coursera**
 - Cost: $39-79/month
+- Quality: University-backed
 - Best for: Structured learning paths
-- New in 2026: LLM and agent specializations
+- Specializations: 200+ AI/ML options
+- Certificates: Recognized by employers
 
-### 5. Andrew Ng's Courses
-- Courses: 15+
-- Cost: $39-99/month
-- Best for: ML and AI fundamentals
-- New in 2026: Agentic AI systems
+**Udacity**
+- Cost: $399-499/month (Nanodegrees)
+- Quality: Career-focused
+- Best for: Career switchers
+- Programs: 15+ AI/ML focused
+- Guarantee: Job placement assistance
 
-### 6. Anthropic's AI Safety Course
-- Courses: 5+
+**Anthropic's AI Safety Course**
 - Cost: Free
-- Best for: AI safety and alignment
-- New in 2026: Agent safety frameworks
+- Quality: From AI safety experts
+- Best for: Understanding AI safety
+- Courses: 5+ on alignment and safety
+- Relevance: Critical for responsible AI
 
-## Recommended Learning Path for 2026
-1. **Month 1**: Python & Math foundations
-2. **Month 2-3**: Machine learning basics
-3. **Month 4-5**: Deep learning and transformers
-4. **Month 6-7**: LLM fine-tuning
-5. **Month 8-9**: AI agent development
-6. **Month 10+**: Specialization (finance, healthcare, etc.)
+### Specialized Resources
 
-## Pro Tips for 2026
-- Build AI agent projects
-- Contribute to open-source AI projects
-- Participate in AI hackathons
-- Join AI communities (Discord, Reddit)
-- Stay updated with latest models
-- Practice with free API credits
+**Hugging Face Course**
+- Cost: Free
+- Focus: Transformers, NLP
+- Quality: Industry standard
+- Hands-on: Jupyter notebooks
 
-Start learning AI today - the future is here!`,
+**LangChain Documentation**
+- Cost: Free
+- Focus: Agent development
+- Quality: Comprehensive
+- Community: Active Discord
+
+**CrewAI Academy**
+- Cost: Free + paid advanced
+- Focus: Multi-agent systems
+- Quality: Practical examples
+- Community: Growing fast
+
+## Recommended Learning Path (May 2026)
+
+### Month 1-2: Foundations
+- Python fundamentals (Codecademy, freeCodeCamp)
+- Math basics (3Blue1Brown, Khan Academy)
+- Cost: Free
+
+### Month 3-4: Core ML
+- Machine learning basics (Fast.ai)
+- Statistics and probability
+- Cost: Free
+
+### Month 5-6: Deep Learning
+- Neural networks and deep learning
+- Transformers and attention
+- Cost: $50-100 (Coursera or DeepLearning.AI)
+
+### Month 7-8: LLMs & Agents
+- Large language models
+- AI agent development
+- Cost: $50-100
+
+### Month 9-10: Specialization
+- Choose your path (finance, healthcare, etc.)
+- Build portfolio projects
+- Cost: $0-100
+
+### Month 11-12: Advanced Topics
+- Advanced techniques
+- Production deployment
+- Cost: $50-150
+
+## Real Success Stories (May 2026)
+
+- **Self-taught to $150/hour**: 6-12 months, Fast.ai + portfolio
+- **Career switcher to AI engineer**: 12-18 months, Udacity + projects
+- **Freelancer to $10K/month**: 12-24 months, specialization + networking
+
+## Pro Tips
+
+1. **Build projects**: Learning without building is useless
+2. **Join communities**: Discord, Reddit, Twitter
+3. **Stay current**: AI moves fast, follow latest releases
+4. **Network**: Connections matter more than credentials
+5. **Contribute**: Open source projects boost credibility
+
+## The Reality
+You don't need expensive courses to learn AI in 2026. Free resources are excellent. What matters is consistent practice and building real projects.`,
     image: '📊',
     date: '2026-05-20',
     readTime: '11 min read',
@@ -492,7 +666,7 @@ export default function WeeklyContent() {
               <div className="px-4 py-2 bg-primary/20 border border-primary/50 rounded-full">
                 <p className="text-sm font-semibold text-primary flex items-center gap-2">
                   <TrendingUp size={16} />
-                  Weekly Updates
+                  Weekly Updates - May 2026
                 </p>
               </div>
             </div>
@@ -500,7 +674,7 @@ export default function WeeklyContent() {
               Latest <span className="text-primary">Content</span>
             </h1>
             <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
-              Stay updated with the latest AI tools, internships, opportunities, and trending skills in tech.
+              Real, current information about AI tools, internships, opportunities, and trending skills. Updated weekly with actual market data.
             </p>
           </div>
 
@@ -541,9 +715,9 @@ export default function WeeklyContent() {
           {/* CTA Section */}
           <div className="mt-20 text-center">
             <div className="bg-gradient-to-r from-primary/10 to-accent/10 border border-primary/30 rounded-xl p-12 space-y-6">
-              <h2 className="text-3xl font-bold">Never Miss an Update</h2>
+              <h2 className="text-3xl font-bold">Stay Updated Weekly</h2>
               <p className="text-foreground/70 max-w-xl mx-auto">
-                Get weekly content about AI tools, internships, opportunities, and trending skills delivered to your inbox.
+                Get real, current information about AI tools, internships, opportunities, and trending skills delivered fresh every week.
               </p>
               <div className="flex gap-3 justify-center">
                 <input
