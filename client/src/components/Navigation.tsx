@@ -13,6 +13,7 @@ export default function Navigation() {
     { label: 'Community', href: '/community' },
     { label: 'Opportunities', href: '/opportunities' },
     { label: 'Career Paths', href: '/career-paths' },
+    { label: '💎 Growth Vault', href: '/growth-vault', premium: true },
     { label: 'Founder', href: '/founder' },
     { label: 'Team', href: '/team' },
     { label: 'Links', href: '/links' },
@@ -38,7 +39,7 @@ export default function Navigation() {
               key={item.label}
               href={item.href}
               className={`text-sm font-medium transition-all duration-300 ease-out ${
-                isActive(item.href)
+                item.premium ? 'text-accent font-bold' : isActive(item.href)
                   ? 'text-primary'
                   : 'text-foreground/70 hover:text-primary'
               }`}
@@ -80,7 +81,7 @@ export default function Navigation() {
                 key={item.label}
                 href={item.href}
                 className={`block px-4 py-2 rounded-lg transition-all duration-300 ease-out ${
-                  isActive(item.href)
+                  item.premium ? 'text-accent font-bold bg-accent/10' : isActive(item.href)
                     ? 'text-primary bg-background'
                     : 'text-foreground/70 hover:text-primary hover:bg-background'
                 }`}
