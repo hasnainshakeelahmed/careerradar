@@ -504,6 +504,55 @@ export const appRouter = router({
   }),
 
   // ============================================================================
+  // CONTENT MANAGEMENT ROUTES
+  // ============================================================================
+  content: router({
+    getPublished: publicProcedure
+      .input(z.object({
+        limit: z.number().default(10),
+        category: z.string().optional(),
+      }))
+      .query(async ({ input }) => {
+        // TODO: Implement content retrieval from contentService
+        return [];
+      }),
+
+    getSchedules: protectedProcedure.query(async ({ ctx }) => {
+      if (ctx.user.role !== "admin") {
+        throw new TRPCError({ code: "FORBIDDEN" });
+      }
+      // TODO: Implement schedule retrieval
+      return [];
+    }),
+
+    scheduleWeekly: protectedProcedure
+      .input(z.object({
+        topics: z.array(z.string()),
+        scheduledDate: z.date(),
+      }))
+      .mutation(async ({ ctx, input }) => {
+        if (ctx.user.role !== "admin") {
+          throw new TRPCError({ code: "FORBIDDEN" });
+        }
+        // TODO: Implement weekly scheduling
+        return { success: true };
+      }),
+
+    generateContent: protectedProcedure
+      .input(z.object({
+        topic: z.string(),
+        category: z.enum(["ai_tools", "internships", "opportunities", "earning_methods", "trending_skills", "resources"]),
+      }))
+      .mutation(async ({ ctx, input }) => {
+        if (ctx.user.role !== "admin") {
+          throw new TRPCError({ code: "FORBIDDEN" });
+        }
+        // TODO: Implement content generation
+        return { success: true, postId: 0 };
+      }),
+  }),
+
+  // ============================================================================
   // USER PREFERENCES ROUTES
   // ============================================================================
   preferences: router({

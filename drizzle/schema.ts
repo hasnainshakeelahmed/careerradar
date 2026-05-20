@@ -291,3 +291,50 @@ export const paymentHistory = mysqlTable("payment_history", {
 
 export type PaymentHistory = typeof paymentHistory.$inferSelect;
 export type InsertPaymentHistory = typeof paymentHistory.$inferInsert;
+
+
+/**
+ * Content Posts Table
+ * Stores AI-generated content posts for weekly publishing
+ */
+export const contentPosts = mysqlTable("content_posts", {
+  id: int("id").autoincrement().primaryKey(),
+  title: varchar("title", { length: 255 }).notNull(),
+  summary: text("summary").notNull(),
+  content: text("content").notNull(),
+  category: mysqlEnum("category", ["ai_tools", "internships", "opportunities", "earning_methods", "trending_skills", "resources"]).notNull(),
+  imageUrl: varchar("imageUrl", { length: 500 }),
+  imageKey: varchar("imageKey", { length: 500 }), // S3 storage key
+  sourceUrl: varchar("sourceUrl", { length: 500 }), // Original research source
+  tags: text("tags"), // JSON stringified array
+  status: mysqlEnum("status", ["draft", "scheduled", "published", "archived"]).default("draft").notNull(),
+  publishedAt: timestamp("publishedAt"),
+  scheduledFor: timestamp("scheduledFor"),
+  createdBy: int("createdBy").notNull(),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+
+export type ContentPost = typeof contentPosts.$inferSelect;
+export type InsertContentPost = typeof contentPosts.$inferInsert;
+
+/**
+ * Content Schedule Table
+ * Tracks weekly content generation and publishing schedule
+ */
+export const contentSchedules = mysqlTable("content_schedules", {
+  id: int("id").autoincrement().primaryKey(),
+  weekNumber: int("weekNumber").notNull(),
+  year: int("year").notNull(),
+  scheduledDate: timestamp("scheduledDate").notNull(),
+  status: mysqlEnum("status", ["pending", "researching", "generating", "ready", "published", "failed"]).default("pending").notNull(),
+  researchTopics: text("researchTopics"), // JSON stringified array
+  postsGenerated: int("postsGenerated").default(0),
+  errorLog: text("errorLog"), // Stores error messages if generation fails
+  completedAt: timestamp("completedAt"),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+
+export type ContentSchedule = typeof contentSchedules.$inferSelect;
+export type InsertContentSchedule = typeof contentSchedules.$inferInsert;

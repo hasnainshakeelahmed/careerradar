@@ -14,6 +14,7 @@ import OpportunitiesPage from "./pages/OpportunitiesPage";
 import LinksPage from "./pages/LinksPage";
 import PaymentPage from "./pages/PaymentPage";
 import AdminDashboard from "./pages/AdminDashboard";
+import CareerPaths from "./pages/CareerPaths";
 
 
 function Router() {
@@ -28,6 +29,7 @@ function Router() {
       <Route path={"/links"} component={LinksPage} />
       <Route path={"/payment"} component={PaymentPage} />
       <Route path={"/admin"} component={AdminDashboard} />
+      <Route path={"/career-paths"} component={CareerPaths} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

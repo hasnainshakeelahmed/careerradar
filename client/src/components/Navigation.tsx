@@ -12,6 +12,7 @@ export default function Navigation() {
     { label: 'Resources', href: '/resources' },
     { label: 'Community', href: '/community' },
     { label: 'Opportunities', href: '/opportunities' },
+    { label: 'Career Paths', href: '/career-paths' },
     { label: 'Founder', href: '/founder' },
     { label: 'Team', href: '/team' },
     { label: 'Links', href: '/links' },

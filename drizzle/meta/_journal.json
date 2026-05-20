@@ -15,6 +15,13 @@
       "when": 1779263754799,
       "tag": "0001_opposite_hedge_knight",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1779271151359,
+      "tag": "0002_striped_maginty",
+      "breakpoints": true
     }
   ]
 }

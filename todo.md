@@ -40,6 +40,14 @@
 - [x] Fix logo display in Navigation
 - [x] Reorder sections: move Resources & Community up, Founder & Team down
 
+## Semi-Automated Content System (FOUNDATION COMPLETE)
+- [x] Design database schema for content posts and scheduling
+- [x] Create backend API for research and content generation
+- [x] Create frontend content display components
+- [ ] Build content management admin dashboard (Phase 2)
+- [ ] Set up weekly automated scheduling with Heartbeat (Phase 2)
+- [ ] Connect content service to tRPC procedures (Phase 2)
+
 ## Future Enhancements (Optional)
 - [ ] Set up email notification system for contact form submissions
 - [ ] Connect Admin Dashboard to real backend data (tRPC procedures)
