@@ -1,25 +1,40 @@
-import { Button } from "@/components/ui/button";
-import { Loader2 } from "lucide-react";
-import { Streamdown } from 'streamdown';
+import { useState } from 'react';
+import { Menu, X, ArrowRight, Zap, Users, Briefcase, TrendingUp } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import Navigation from '@/components/Navigation';
+import Hero from '@/components/sections/Hero';
+import Stats from '@/components/sections/Stats';
+import Features from '@/components/sections/Features';
+import About from '@/components/sections/About';
+import AboutFounder from '@/components/sections/AboutFounder';
+import Testimonials from '@/components/sections/Testimonials';
+import Team from '@/components/sections/Team';
+import Channels from '@/components/sections/Channels';
+import Resources from '@/components/sections/Resources';
+import Community from '@/components/sections/Community';
+import Opportunities from '@/components/sections/Opportunities';
+import Contact from '@/components/sections/Contact';
+import Footer from '@/components/Footer';
 
-/**
- * All content in this page are only for example, replace with your own feature implementation
- * When building pages, remember your instructions in Frontend Best Practices, Design Guide and Common Pitfalls
- */
 export default function Home() {
-  // If theme is switchable in App.tsx, we can implement theme toggling like this:
-  // const { theme, toggleTheme } = useTheme();
-
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen bg-background text-foreground">
+      <Navigation />
       <main>
-        {/* Example: lucide-react for icons */}
-        <Loader2 className="animate-spin" />
-        Example Page
-        {/* Example: Streamdown for markdown rendering */}
-        <Streamdown>Any **markdown** content</Streamdown>
-        <Button variant="default">Example Button</Button>
+        <Hero />
+        <Stats />
+        <Features />
+        <About />
+        <AboutFounder />
+        <Testimonials />
+        <Team />
+        <Channels />
+        <Resources />
+        <Community />
+        <Opportunities />
+        <Contact />
       </main>
+      <Footer />
     </div>
   );
 }
