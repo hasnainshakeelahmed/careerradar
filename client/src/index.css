@@ -57,11 +57,11 @@
   --radius: 0.65rem;
   
   /* Dark Navy Background with Blue/Cyan Accents */
-  --background: #0F172A; /* Very Dark Navy/Black */
+  --background: #0A0E27; /* Ultra Dark Navy/Black */
   --foreground: #FFFFFF; /* White */
-  --card: #1E293B; /* Dark Navy */
+  --card: #111A35; /* Darker Navy */
   --card-foreground: #FFFFFF; /* White */
-  --popover: #1E293B;
+  --popover: #111A35;
   --popover-foreground: #FFFFFF;
   --primary-color: #3B82F6;
   --secondary: #06B6D4; /* Cyan */
@@ -69,17 +69,17 @@
   --muted: #475569;
   --muted-foreground: #CBD5E1;
   --accent: #06B6D4; /* Cyan */
-  --accent-foreground: #0F172A;
+  --accent-foreground: #FFFFFF;
   --destructive: #EF4444;
   --destructive-foreground: #FFFFFF;
-  --border: #334155;
-  --input: #1E293B;
+  --border: #1E3A4C;
+  --input: #111A35;
   --ring: #3B82F6;
-  --sidebar: #0F172A;
+  --sidebar: #0A0E27;
   --sidebar-foreground: #FFFFFF;
   --sidebar-accent: #3B82F6;
   --sidebar-accent-foreground: #FFFFFF;
-  --sidebar-border: #334155;
+  --sidebar-border: #1E3A4C;
   --sidebar-ring: #3B82F6;
 }
 
@@ -88,28 +88,28 @@
   --primary-foreground: #FFFFFF;
   --sidebar-primary: #3B82F6;
   --sidebar-primary-foreground: #FFFFFF;
-  --background: #0F172A;
+  --background: #0A0E27;
   --foreground: #FFFFFF;
-  --card: #1E293B;
+  --card: #111A35;
   --card-foreground: #FFFFFF;
-  --popover: #1E293B;
+  --popover: #111A35;
   --popover-foreground: #FFFFFF;
   --secondary: #06B6D4;
   --secondary-foreground: #FFFFFF;
   --muted: #475569;
   --muted-foreground: #CBD5E1;
   --accent: #06B6D4;
-  --accent-foreground: #0F172A;
+  --accent-foreground: #FFFFFF;
   --destructive: #EF4444;
   --destructive-foreground: #FFFFFF;
-  --border: #334155;
-  --input: #1E293B;
+  --border: #1E3A4C;
+  --input: #111A35;
   --ring: #3B82F6;
-  --sidebar: #0F172A;
+  --sidebar: #0A0E27;
   --sidebar-foreground: #FFFFFF;
   --sidebar-accent: #3B82F6;
   --sidebar-accent-foreground: #FFFFFF;
-  --sidebar-border: #334155;
+  --sidebar-border: #1E3A4C;
   --sidebar-ring: #3B82F6;
 }
 
