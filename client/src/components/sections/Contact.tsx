@@ -1,4 +1,4 @@
-import { Mail, MessageSquare, Phone, MapPin, Instagram, Linkedin, Github } from 'lucide-react';
+import { Mail, MessageSquare, Phone, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { useState } from 'react';
@@ -18,44 +18,32 @@ export default function Contact() {
     {
       icon: Mail,
       label: 'Email',
-      value: 'hasnainshakee893@gmail.com',
-      href: 'mailto:hasnainshakee893@gmail.com',
+      value: 'hello@careerradar.pk',
+      href: 'mailto:hello@careerradar.pk',
     },
     {
       icon: Phone,
       label: 'WhatsApp',
-      value: '+92 370 7519482',
-      href: 'https://wa.me/923707519482',
+      value: '+92 300 1234567',
+      href: 'https://wa.me/923001234567',
     },
     {
       icon: MapPin,
       label: 'Location',
-      value: 'Pakistan (Global Operations)',
+      value: 'Karachi, Pakistan',
       href: '#',
-    },
-  ];
-
-  const socialLinks = [
-    {
-      icon: Instagram,
-      url: 'https://www.instagram.com/careerradar.ai?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==',
-      label: 'Instagram',
-    },
-    {
-      icon: Linkedin,
-      url: 'https://www.linkedin.com/company/careerradarofficial/',
-      label: 'LinkedIn',
     },
     {
       icon: MessageSquare,
-      url: 'https://chat.whatsapp.com/Gn9CA29T9lPD1otSwPgjaU',
-      label: 'WhatsApp Community',
+      label: 'Discord',
+      value: 'Join Our Server',
+      href: '#',
     },
   ];
 
   return (
     <section id="contact" className="py-16 md:py-24 relative overflow-hidden">
-      <div className="absolute inset-0 opacity-30"></div>
+      <div className="absolute inset-0 radar-pattern opacity-30"></div>
 
       <div className="container relative z-10">
         <div className="text-center mb-16 space-y-4 animate-fadeInUp">
@@ -63,7 +51,7 @@ export default function Contact() {
             Get In <span className="text-gradient">Touch</span>
           </h2>
           <p className="text-lg text-foreground/60 max-w-2xl mx-auto">
-            Have questions? We'd love to hear from you. Reach out through any of these channels and let's start a conversation.
+            Have questions? We'd love to hear from you. Reach out and let's start a conversation.
           </p>
         </div>
 
@@ -77,8 +65,6 @@ export default function Contact() {
                 <a
                   key={index}
                   href={info.href}
-                  target={info.href.startsWith('http') ? '_blank' : undefined}
-                  rel={info.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                   className="flex items-start gap-4 group"
                 >
                   <div className="flex-shrink-0 p-3 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors">
@@ -97,21 +83,16 @@ export default function Contact() {
             <div className="pt-8 border-t border-border/50">
               <p className="text-sm text-foreground/60 mb-4">Follow Us</p>
               <div className="flex gap-3">
-                {socialLinks.map((social) => {
-                  const Icon = social.icon;
-                  return (
-                    <a
-                      key={social.label}
-                      href={social.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-10 h-10 bg-card border border-border/50 rounded-lg flex items-center justify-center hover:border-primary/50 hover:bg-primary/10 transition-colors"
-                      title={social.label}
-                    >
-                      <Icon size={18} className="text-foreground/70 hover:text-primary" />
-                    </a>
-                  );
-                })}
+                {['Instagram', 'LinkedIn', 'Twitter', 'YouTube'].map((social) => (
+                  <a
+                    key={social}
+                    href="#"
+                    className="w-10 h-10 bg-card border border-border/50 rounded-lg flex items-center justify-center hover:border-primary/50 hover:bg-primary/10 transition-colors"
+                    title={social}
+                  >
+                    <span className="text-lg">{'📱🔗𝕏▶️'['Instagram,LinkedIn,Twitter,YouTube'.split(',').indexOf(social)]}</span>
+                  </a>
+                ))}
               </div>
             </div>
           </div>

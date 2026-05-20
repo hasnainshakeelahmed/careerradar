@@ -37,7 +37,7 @@ export default function AboutFounder() {
             <div className="sticky top-24 space-y-6">
               {/* Avatar */}
               <div className="bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl overflow-hidden border border-primary/30">
-                <img src="/manus-storage/hasnain-shakeel-ahmed_9ac552e1.jpg" alt="Hasnain Shakeel Ahmed" className="w-full h-auto object-cover" />
+                <img src="/manus-storage/hasnain-shakeel-ahmed_9ea76e87.jpg" alt="Hasnain Shakeel Ahmed" className="w-full h-auto object-cover" />
               </div>
               <div className="text-center">
                 <h2 className="text-2xl font-bold text-foreground mb-2">Hasnain Shakeel Ahmed</h2>

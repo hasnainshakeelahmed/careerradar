@@ -4,7 +4,7 @@ const team = [
   {
     name: 'Hasnain Shakeel Ahmed',
     role: 'Founder & Visionary',
-    image: '/manus-storage/hasnain-shakeel-ahmed_9ac552e1.jpg',
+    image: '/manus-storage/hasnain-shakeel-ahmed_9ea76e87.jpg',
     bio: 'Passionate about empowering Pakistani youth. Hasnain founded Career Radar to bridge the gap between talent and opportunity.',
     socials: [
       { icon: Linkedin, href: '#', label: 'LinkedIn' },
@@ -15,7 +15,7 @@ const team = [
   {
     name: 'Shaheer Ahmed',
     role: 'Core Admin & Community Lead',
-    image: '/manus-storage/shaheer-ahmed_e05ab1f7.png',
+    image: '/manus-storage/shaheer-ahmed_681ee7db.png',
     bio: 'Dedicated to building and nurturing the Career Radar community. Shaheer ensures every member gets the support they need.',
     socials: [
       { icon: Linkedin, href: '#', label: 'LinkedIn' },

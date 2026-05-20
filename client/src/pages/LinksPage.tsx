@@ -54,13 +54,6 @@ export default function LinksPage() {
       color: 'from-blue-600 to-blue-700',
     },
     {
-      title: 'Fiverr Profile',
-      description: 'Hire for freelance services and projects',
-      url: 'https://www.fiverr.com/hasnainshakeell',
-      icon: '💼',
-      color: 'from-green-500 to-emerald-600',
-    },
-    {
       title: 'GitHub',
       description: 'Check out code and projects',
       url: 'https://github.com/hasnainshakeelahmed',
@@ -73,13 +66,6 @@ export default function LinksPage() {
       url: 'https://whatsapp.com/channel/0029VbAK0GX6xCSNs5ukZK44',
       icon: '🤖',
       color: 'from-cyan-500 to-blue-500',
-    },
-    {
-      title: 'WhatsApp Direct',
-      description: 'Message directly on WhatsApp',
-      url: 'https://wa.me/923707519482',
-      icon: '💬',
-      color: 'from-green-500 to-emerald-500',
     },
   ];
 
@@ -170,27 +156,19 @@ export default function LinksPage() {
             </div>
           </div>
 
-          {/* Direct Contact */}
+          {/* Email Contact */}
           <div className="mt-20 pt-16 border-t border-border/50">
             <div className="max-w-2xl mx-auto text-center space-y-6">
               <div className="space-y-2">
-                <h3 className="text-2xl font-bold">Get in Touch</h3>
-                <p className="text-foreground/70">Reach out directly through your preferred channel</p>
+                <h3 className="text-2xl font-bold">Prefer Email?</h3>
+                <p className="text-foreground/70">Get in touch directly with our team</p>
               </div>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="https://wa.me/923707519482" target="_blank" rel="noopener noreferrer">
-                  <Button className="bg-green-600 text-white hover:bg-green-700 gap-2">
-                    <MessageCircle size={20} />
-                    WhatsApp
-                  </Button>
-                </a>
-                <a href="mailto:hasnainshakee893@gmail.com">
-                  <Button className="bg-primary text-primary-foreground hover:bg-primary/90 gap-2">
-                    <Mail size={20} />
-                    Email
-                  </Button>
-                </a>
-              </div>
+              <a href="mailto:contact@careerradar.ai">
+                <Button className="bg-primary text-primary-foreground hover:bg-primary/90 btn-glow gap-2">
+                  <Mail size={20} />
+                  Send us an Email
+                </Button>
+              </a>
             </div>
           </div>
         </div>

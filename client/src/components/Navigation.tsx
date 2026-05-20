@@ -9,11 +9,12 @@ export default function Navigation() {
 
   const navItems = [
     { label: 'Home', href: '/' },
+    { label: 'Founder', href: '/founder' },
+    { label: 'Team', href: '/team' },
     { label: 'Resources', href: '/resources' },
-    { label: 'Opportunities', href: '/opportunities' },
     { label: 'Community', href: '/community' },
-    { label: 'About', href: '/founder' },
-    { label: 'Contact', href: '/contact' },
+    { label: 'Opportunities', href: '/opportunities' },
+    { label: 'Links', href: '/links' },
   ];
 
   const isActive = (href: string) => location === href;
@@ -48,16 +49,11 @@ export default function Navigation() {
           ))}
         </div>
 
-        {/* Auth Buttons - Desktop */}
-        <div className="hidden lg:flex items-center gap-3">
-          <a href="/login">
-            <Button variant="outline" className="border-border/50 text-foreground hover:bg-card">
-              Log In
-            </Button>
-          </a>
-          <a href="/signup">
+        {/* CTA Button - Desktop */}
+        <div className="hidden lg:block">
+          <a href="/#contact">
             <Button className="bg-primary text-primary-foreground hover:bg-primary/90 btn-glow">
-              Sign Up
+              Get Started
             </Button>
           </a>
         </div>
@@ -89,14 +85,9 @@ export default function Navigation() {
                 {item.label}
               </a>
             ))}
-            <a href="/login" onClick={() => setIsOpen(false)} className="block">
-              <Button variant="outline" className="w-full border-border/50 text-foreground hover:bg-card">
-                Log In
-              </Button>
-            </a>
-            <a href="/signup" onClick={() => setIsOpen(false)} className="block">
+            <a href="/#contact" onClick={() => setIsOpen(false)}>
               <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90">
-                Sign Up
+                Get Started
               </Button>
             </a>
           </div>
