@@ -1,4 +1,4 @@
-import { eq, and, desc, asc, like } from "drizzle-orm";
+import { eq, and, desc, asc, like, lt, gt, isNull, sum } from "drizzle-orm";
 import { drizzle } from "drizzle-orm/mysql2";
 import { 
   InsertUser, 
@@ -12,6 +12,7 @@ import {
   newsUpdates,
   userApplications,
   userPreferences,
+  donations,
   type CommunityMember,
   type ContactSubmission,
   type Opportunity,
@@ -21,6 +22,7 @@ import {
   type NewsUpdate,
   type UserApplication,
   type UserPreference,
+  type Donation,
 } from "../drizzle/schema";
 
 let _db: ReturnType<typeof drizzle> | null = null;
@@ -421,4 +423,79 @@ export async function updateUserPreferences(userId: number, data: Partial<UserPr
   const db = await getDb();
   if (!db) throw new Error("Database not available");
   return await db.update(userPreferences).set(data).where(eq(userPreferences.userId, userId));
+}
+
+
+// ============================================================================
+// DONATION QUERIES
+// ============================================================================
+
+export async function createDonation(data: {
+  donorName: string;
+  donorEmail?: string;
+  amount: string;
+  currency: string;
+  paymentMethod: "easypaisa" | "nayapay" | "raast" | "binance" | "payoneer" | "other";
+  transactionId?: string;
+  message?: string;
+  isAnonymous?: boolean;
+}) {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+
+  return await db.insert(donations).values({
+    donorName: data.donorName,
+    donorEmail: data.donorEmail,
+    amount: data.amount,
+    currency: data.currency,
+    paymentMethod: data.paymentMethod,
+    transactionId: data.transactionId,
+    message: data.message,
+    isAnonymous: data.isAnonymous || false,
+    status: "completed",
+  });
+}
+
+export async function getDonations(limit: number = 10) {
+  const db = await getDb();
+  if (!db) return [];
+
+  return await db
+    .select()
+    .from(donations)
+    .where(eq(donations.status, "completed"))
+    .orderBy(desc(donations.createdAt))
+    .limit(limit);
+}
+
+export async function getDonationStats() {
+  const db = await getDb();
+  if (!db) return { totalDonations: 0, totalAmount: 0, donorCount: 0 };
+
+  const result = await db
+    .select({
+      totalAmount: sum(donations.amount),
+      donorCount: count(donations.id),
+    })
+    .from(donations)
+    .where(eq(donations.status, "completed"));
+
+  return {
+    totalAmount: result[0]?.totalAmount || 0,
+    donorCount: result[0]?.donorCount || 0,
+  };
+}
+
+export async function getDonationsByPaymentMethod(method: string) {
+  const db = await getDb();
+  if (!db) return [];
+
+  return await db
+    .select()
+    .from(donations)
+    .where(and(
+      eq(donations.paymentMethod, method as any),
+      eq(donations.status, "completed")
+    ))
+    .orderBy(desc(donations.createdAt));
 }

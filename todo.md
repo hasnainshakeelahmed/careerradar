@@ -68,3 +68,22 @@
 4. Set up email notifications
 5. Write comprehensive vitest tests
 6. Final testing and deployment
+
+
+## Help Us Grow - Donation System
+- [x] Create donations database table
+- [x] Add donation database helpers (create, retrieve, get stats)
+- [x] Create donations tRPC router with endpoints
+- [x] Create HelpUsGrow page with donation form
+- [x] Add payment method details (Easypaisa, Nayapay, Raast)
+- [x] Implement donation amount selection ($1, $2, $5, $10)
+- [x] Add impact section showing how donations help
+- [x] Add FAQ section
+- [x] Add copy-to-clipboard for payment details
+- [x] Add anonymous donation option
+- [x] Add route to App.tsx
+- [x] Add HelpUsGrow link to Navigation
+- [ ] Integrate tRPC donations endpoints
+- [ ] Add email notifications for donations
+- [ ] Add Binance payment method (when ready)
+- [ ] Add Payoneer payment method (when ready)

@@ -18,6 +18,7 @@ export default function Navigation() {
     { label: 'Founder', href: '/founder' },
     { label: 'Team', href: '/team' },
     { label: 'Links', href: '/links' },
+    { label: '❤️ Help Us Grow', href: '/help-us-grow' },
   ];
 
   const isActive = (href: string) => location === href;

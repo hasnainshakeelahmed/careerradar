@@ -10,13 +10,16 @@
     "DATABASE_URL": "mysql://2SU4ynQSBxgrCeZ.2687268929f0:w8xMK719Vc1hfqyS3AbJ@gateway02.us-east-1.prod.aws.tidbcloud.com:4000/NQVWoVzAeRCcQyVBHfPNcm?ssl={\"rejectUnauthorized\":true}",
     "DRIZZLE_DATABASE_URL": "mysql://2SU4ynQSBxgrCeZ.2687268929f0:w8xMK719Vc1hfqyS3AbJ@gateway02.us-east-1.prod.aws.tidbcloud.com:4000/NQVWoVzAeRCcQyVBHfPNcm?ssl={\"rejectUnauthorized\":true}"
   },
-  "experiments": null,
+  "experiments": [
+    "no_db_push"
+  ],
   "git_remote": {
     "repo_url": "s3://vida-prod-gitrepo/webdev-git/310519663059366809/NQVWoVzAeRCcQyVBHfPNcm",
-    "access_key_id": "ASIAZV3A2ECZBWZNHXTA",
-    "secret_access_key": "JyUAAYyWpfGLJDjKvYiN5pos88rOfEcosT8Ljkqd",
-    "session_token": "IQoJb3JpZ2luX2VjECAaCXVzLWVhc3QtMSJIMEYCIQCO9ZwHmnH8TjOSgWKbpbKZl4FatChxr3S6pU3Yi4AJNAIhAPvnxkfr/g8jFxwUBf6puUQaQI8P+enMkP2ojVdTkmFZKv8DCOj//////////wEQBBoMNjY1Mzg2MDk4ODY2Igxu+glUvOxx0N9fQBsq0wMy98zNtcfUQ5Z8Z0fVA1+B2aokWayRdvjjFbGVaK+yjd8RPosZuya7AeGB4DUMLb0nKW2YoLfEhhQOaLBJZ+X4hd5am2X/VFEgJKlLlpfG/qQA1xPFDesGFZcYxbxvFQ8WeHq3BxakTKNvU+RQMfhextU402c3GLMTsSwHjHTirR2H3hdWOiv1nEdCNeNYNtA5zI/Lv4a+CS7HWsM7hywTPL4QOpNgiKwX6oFXLVri/Onwd1xewHw1ne8xsD85/0NEfHU0B2KjN1dk7IDpMrYqOHq5rHAHtx28Nlx5R7MwnK+/kw9jvO3sKKzcGTwj3mFayU3Jvn3rl21poy+6ywmwR2YrWJS8A55hsL8g/GdGQfRImoz7SJddaGiOzzX1cOkAEJd8Z5Y5W0X3RffC9UNM2eIx72EXrA39D4Y6Wf0opFGiWeE3BHR09UUS7wH06uir2Mzzi4luYLkNioNF3JejlfpsskMPY/xo/JWzsf9mR++kx12CprorGFqV/jXsXlhzJkeqvkLy1zIhxXuGazlNX+/mMtBdN3O9tOp7x79Hirxt4uJK53SrC7Y4Zuqh99UaxJhtI0bCJmuxhWxWUxz2nQ8cbDvzxyxTrqCagfFEiYlWTjD4vrXQBjqcAWHzbXxQME6I87X99uICEULNVnGV8gjQ3t5XgAaMqQcGZVjs8MRWIfm/8es9SGF73a0h/1QBX5NVP9I4LFUgvG38alrH2GPbqGWVLV4rhug3DYfMqPGbkEbF8/heP/KpcmbQIR+1+VElJKjZHJn2rtEkEFpNPeurzjRrq+NDgyBlQPo/1v+BaUWbrBXxQN4shKgIR7l5tQyovAzFKA==",
-    "expiration": "2026-05-20T19:15:04.000Z"
+    "access_key_id": "ASIAZV3A2ECZFIKKJEHB",
+    "secret_access_key": "/BofTRAR7R5XsNQJfuearpX3htg5EljSBdu2sgJP",
+    "session_token": "IQoJb3JpZ2luX2VjEAoaCXVzLWVhc3QtMSJHMEUCIQCCO73jEZm0RNe5AtkTJRdQiXxD0jgIo9IRwsZvEX0UQwIgIEZ0hJUXImuB7ClrsTm52BItU49jWcUrbz2cH4vhd9wq/wMI0///////////ARAEGgw2NjUzODYwOTg4NjYiDNBM1A8eutfsekSGvyrTA0LH8hIwbGTI92v44rw/P3bfnxKbUmjsmTjFPyhjHPr2fn8DonPqgScBT26UkNcxUnTk1GOehK9FbtLtUhCQMEAQaMqdqT739cW1UqBiMQNHsCUMwUliJza6cvadfX8H7debxP12HM3bRy5mzk1MTNM2s1GfCRqkvulYFwBndaK8OcponK6HJ4Q28xXi1eWmigTx1NMYfStDI0ABFNVH9dzF++vNIwQIzVc5ImZKqn87zNFzXgu4W8k6FufUIerbmMv9cJKziMUd9jN3CKud3U72Vdw0fGAtSUJ9yYn73J+pnn0Z8G8yAZlAkVvLxYW2JjE9E7GBF57Qa8v/XIVKazSI8RTC4iM7oCmLn8J6X4hbz/xhzdzSHUWIYs+f8ffCLIAxskkmxxAXXI6/ibo1IMvKEChuPsCmsQcOGz+7hKXEqfJ4D2wOhfPqx5stTh+xmCT5PmvyVMyqosr5FYvu5K0IdTL3+FK85725u9wID++PNNvHO+N4GbhcKAjru0iO0NqRruZWwzHKj4WhOGfCvpnATJTMVXltWHUC6ooZewQHDNlu/iG/eNqrXpVIgWM7u+AxuXMB5KNvegtBCCiQEwYn7AC8LdwKV28tHS1yvcBlgjm8MLXC2dEGOp0BB1/Hp8a6/fozfBGM7GU2LnzH5vuDyA5IN4iLqRLWp3COs5HR1gMEYCLNERAPMqJSb639eSfYd25d5jGo0X60617iwwoehORzPMKdmgb25sQhGw5w3if3uf0MKpBykYQdg3eG5j4MecyDmx6KPvKbFAxzSr2ndPzAfoUcnoMGAemB/XuNGeCpG+FToXznreeGfRBkoYhSEMFsnRCQ2w==",
+    "expiration": "2026-06-20T21:45:25.000Z",
+    "backend": "GIT_BACKEND_S3"
   },
   "name": "career-radar",
   "path": "/home/ubuntu/career-radar",

@@ -17,6 +17,7 @@ import AdminDashboard from "./pages/AdminDashboard";
 import CareerPaths from '@/pages/CareerPaths';
 import GrowthVault from '@/pages/GrowthVault';
 import WeeklyContent from '@/pages/WeeklyContent';
+import HelpUsGrow from '@/pages/HelpUsGrow';
 
 
 function Router() {
@@ -29,8 +30,9 @@ function Router() {
       <Route path={"/resources"} component={ResourcesPage} />
       <Route path={"/opportunities"} component={OpportunitiesPage} />
       <Route path={"/links"} component={LinksPage} />
-      <Route path={"/payment"} component={PaymentPage} />
-      <Route path={"/admin"} component={AdminDashboard} />
+      <Route path="/payment" component={PaymentPage} />
+      <Route path="/help-us-grow" component={HelpUsGrow} />
+      <Route path="/admin" component={AdminDashboard} />
       <Route path="/career-paths" component={CareerPaths} />
         <Route path="/growth-vault" component={GrowthVault} />
         <Route path="/weekly-content" component={WeeklyContent} />

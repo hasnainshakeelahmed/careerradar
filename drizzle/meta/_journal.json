@@ -22,6 +22,13 @@
       "when": 1779271151359,
       "tag": "0002_striped_maginty",
       "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "5",
+      "when": 1782184415630,
+      "tag": "0003_slim_skaar",
+      "breakpoints": true
     }
   ]
 }

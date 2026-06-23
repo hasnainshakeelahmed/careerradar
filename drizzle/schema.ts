@@ -338,3 +338,26 @@ export const contentSchedules = mysqlTable("content_schedules", {
 
 export type ContentSchedule = typeof contentSchedules.$inferSelect;
 export type InsertContentSchedule = typeof contentSchedules.$inferInsert;
+
+
+/**
+ * Donations Table
+ * Stores donation records from supporters
+ */
+export const donations = mysqlTable("donations", {
+  id: int("id").autoincrement().primaryKey(),
+  donorName: varchar("donorName", { length: 255 }).notNull(),
+  donorEmail: varchar("donorEmail", { length: 320 }),
+  amount: decimal("amount", { precision: 10, scale: 2 }).notNull(),
+  currency: varchar("currency", { length: 10 }).default("USD").notNull(),
+  paymentMethod: mysqlEnum("paymentMethod", ["easypaisa", "nayapay", "raast", "binance", "payoneer", "other"]).notNull(),
+  transactionId: varchar("transactionId", { length: 255 }).unique(),
+  status: mysqlEnum("status", ["pending", "completed", "failed", "refunded"]).default("pending").notNull(),
+  message: text("message"), // Optional message from donor
+  isAnonymous: boolean("isAnonymous").default(false),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+
+export type Donation = typeof donations.$inferSelect;
+export type InsertDonation = typeof donations.$inferInsert;
